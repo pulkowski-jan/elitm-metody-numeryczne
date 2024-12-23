@@ -10,42 +10,14 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     28333,        656]
-NotebookOptionsPosition[     27463,        635]
-NotebookOutlinePosition[     27868,        651]
-CellTagsIndexPosition[     27825,        648]
+NotebookDataLength[     35650,        787]
+NotebookOptionsPosition[     34549,        762]
+NotebookOutlinePosition[     34951,        778]
+CellTagsIndexPosition[     34908,        775]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"debugQ", "[", "]"}], ":=", "False"}], "\n", 
- RowBox[{
-  RowBox[{"debug", "[", "x_", "]"}], ":=", 
-  RowBox[{"If", "[", 
-   RowBox[{
-    RowBox[{"debugQ", "[", "]"}], ",", " ", 
-    RowBox[{"Print", "[", 
-     RowBox[{
-      RowBox[{"x", "[", 
-       RowBox[{"[", "1", "]"}], "]"}], ",", " ", "\"\< = \>\"", ",", " ", 
-      RowBox[{"x", "[", 
-       RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}], "]"}]}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"debug", "[", 
-    RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"debug", "[", "x", "]"}], ",", " ", 
-     RowBox[{"debug", "[", "y", "]"}]}], "}"}]}], ";"}]}], "Code",
- CellChangeTimes->{{3.943890625389629*^9, 3.943890707151291*^9}, {
-  3.943890979485574*^9, 3.943891019138839*^9}, {3.94389105813235*^9, 
-  3.9438910615650997`*^9}, {3.943891716461607*^9, 3.943891717078252*^9}},
- CellLabel->
-  "In[490]:=",ExpressionUUID->"059011d8-67e6-4bb9-bdb1-65e01fd157e9"],
-
 Cell[BoxData[
  RowBox[{
   RowBox[{"visualize", "[", 
@@ -58,36 +30,27 @@ Cell[BoxData[
       RowBox[{"f", "[", "x", "]"}], ",", " ", 
       RowBox[{"{", 
        RowBox[{"x", ",", " ", 
-        RowBox[{
+        RowBox[{"-", 
+         RowBox[{"Max", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Abs", "[", "#", "]"}], "&"}], "/@", 
+           RowBox[{"Flatten", "[", "bounds", "]"}]}], "]"}]}], ",", " ", 
+        RowBox[{"Max", "[", 
          RowBox[{
-          RowBox[{"bounds", "[", 
-           RowBox[{"[", "1", "]"}], "]"}], "[", 
-          RowBox[{"[", "1", "]"}], "]"}], "-", "1"}], ",", " ", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"bounds", "[", 
-           RowBox[{"[", "1", "]"}], "]"}], "[", 
-          RowBox[{"[", "2", "]"}], "]"}], "+", "1"}]}], "}"}], ",", " ", "\n",
-       "\t", 
+          RowBox[{
+           RowBox[{"Abs", "[", "#", "]"}], "&"}], "/@", 
+          RowBox[{"Flatten", "[", "bounds", "]"}]}], "]"}]}], "}"}], ",", " ",
+       "\n", "\t", 
       RowBox[{"PlotRange", " ", "->", " ", 
        RowBox[{
         RowBox[{"Max", "[", 
-         RowBox[{"{", 
+         RowBox[{
           RowBox[{
            RowBox[{"Abs", "[", 
-            RowBox[{"f", "[", 
-             RowBox[{
-              RowBox[{"bounds", "[", 
-               RowBox[{"[", "1", "]"}], "]"}], "[", 
-              RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], ",", " ", 
-           RowBox[{"Abs", "[", 
-            RowBox[{"f", "[", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"bounds", "[", 
-                RowBox[{"[", "1", "]"}], "]"}], "[", 
-               RowBox[{"[", "2", "]"}], "]"}], "+", "1"}], "]"}], "]"}]}], 
-          "}"}], "]"}], " ", "+", " ", "1"}]}], ",", "\n", "\t", 
+            RowBox[{"f", "[", "#", "]"}], "]"}], "&"}], "/@", 
+          RowBox[{"Flatten", "[", "bounds", "]"}]}], "]"}], " ", "+", " ", 
+        "1"}]}], ",", "\n", "\t", 
       RowBox[{"Epilog", "->", " ", 
        RowBox[{"If", "[", 
         RowBox[{
@@ -121,33 +84,15 @@ Cell[BoxData[
           RowBox[{
            RowBox[{"{", 
             RowBox[{"Pink", ",", " ", 
-             RowBox[{"PointSize", "[", "0.02", "]"}], ",", " ", 
+             RowBox[{"PointSize", "[", "0.02", "]"}]}], "}"}], ",", " ", 
+           RowBox[{
+            RowBox[{
              RowBox[{"Point", "[", 
               RowBox[{"{", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"bounds", "[", 
-                  RowBox[{"[", "i", "]"}], "]"}], "[", 
-                 RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
-                RowBox[{"f", "[", 
-                 RowBox[{
-                  RowBox[{"bounds", "[", 
-                   RowBox[{"[", "i", "]"}], "]"}], "[", 
-                  RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}], "]"}], ",", 
-             " ", 
-             RowBox[{"Point", "[", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"bounds", "[", 
-                  RowBox[{"[", "i", "]"}], "]"}], "[", 
-                 RowBox[{"[", "2", "]"}], "]"}], ",", " ", 
-                RowBox[{"f", "[", 
-                 RowBox[{
-                  RowBox[{"bounds", "[", 
-                   RowBox[{"[", "i", "]"}], "]"}], "[", 
-                  RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "}"}], "]"}]}], 
-            "}"}], ",", " ", "\n", "\t\t\t", 
+               RowBox[{"#", ",", " ", 
+                RowBox[{"f", "[", "#", "]"}]}], "}"}], "]"}], "&"}], "/@", 
+            RowBox[{"bounds", "[", 
+             RowBox[{"[", "i", "]"}], "]"}]}], ",", " ", "\n", "\t\t\t", 
            RowBox[{
             RowBox[{
              RowBox[{"InfiniteLine", "[", 
@@ -169,9 +114,11 @@ Cell[BoxData[
     RowBox[{"AnimationRepetitions", " ", "->", " ", "2"}]}], "]"}]}]], "Code",\
 
  CellChangeTimes->{
-  3.9439591080131197`*^9, {3.9439594354296618`*^9, 3.943959441989355*^9}},
+  3.9439591080131197`*^9, {3.9439594354296618`*^9, 3.943959441989355*^9}, {
+   3.943969861457261*^9, 3.9439699283693666`*^9}, {3.943970152491642*^9, 
+   3.943970158680365*^9}, {3.943970198416198*^9, 3.943970245280775*^9}},
  CellLabel->
-  "In[525]:=",ExpressionUUID->"f23f8236-82bd-4721-b04d-9e92b1038475"],
+  "In[264]:=",ExpressionUUID->"f23f8236-82bd-4721-b04d-9e92b1038475"],
 
 Cell[BoxData[
  RowBox[{
@@ -184,12 +131,18 @@ Cell[BoxData[
        "iterationsLimit", ",", " ", "minInterval", ",", " ", "precision"}], 
       "}"}], ",", " ", "\n", "\t", 
      RowBox[{
+      RowBox[{"Clear", "[", 
+       RowBox[{"root", ",", " ", "bounds"}], "]"}], ";", "\n", "\t", 
+      RowBox[{"root", " ", "=", " ", 
+       RowBox[{"intervalStart", " ", "+", " ", 
+        FractionBox[
+         RowBox[{"intervalEnd", " ", "-", " ", "intervalStart"}], "2"]}]}], 
+      ";", "\n", "\t", 
       RowBox[{"bounds", " ", "=", " ", 
        RowBox[{"{", 
         RowBox[{"{", 
          RowBox[{"intervalStart", ",", " ", "intervalEnd"}], "}"}], "}"}]}], 
       ";", "\n", "\t", 
-      RowBox[{"result", " ", "=", " ", "Null"}], ";", "\n", "\t", 
       RowBox[{"Begin", "[", "\"\<bisect`\>\"", "]"}], ";", " ", "\n", "\t", 
       RowBox[{"start", " ", "=", " ", "intervalStart"}], ";", "\n", "\t", 
       RowBox[{"end", " ", "=", " ", "intervalEnd"}], ";", "\n", "\t", 
@@ -223,7 +176,7 @@ Cell[BoxData[
              "precision"}]}], ",", " ", 
            RowBox[{"++", "i"}], ",", "\n", "\t\t\t", 
            RowBox[{
-            RowBox[{"result", " ", "=", " ", "mid"}], ";", "\n", "\t\t\t", 
+            RowBox[{"root", " ", "=", " ", "mid"}], ";", "\n", "\t\t\t", 
             RowBox[{"If", "[", 
              RowBox[{
               RowBox[{
@@ -253,7 +206,7 @@ Cell[BoxData[
          ";"}]}], "\n", "\t", "]"}], ";", "\n", "\t", 
       RowBox[{"End", "[", "]"}], ";", "\n", "\t", 
       RowBox[{"{", 
-       RowBox[{"result", ",", " ", "bounds"}], "}"}]}]}], "\n", "]"}]}], 
+       RowBox[{"root", ",", " ", "bounds"}], "}"}]}]}], "\n", "]"}]}], 
   ";"}]], "Code",
  CellChangeTimes->{{3.9438887698959007`*^9, 3.94388879264522*^9}, {
    3.943888823635027*^9, 3.943889009878839*^9}, {3.943889041841256*^9, 
@@ -275,13 +228,16 @@ Cell[BoxData[
    3.9439562754551992`*^9}, {3.943956372841136*^9, 3.94395648016028*^9}, {
    3.943956547381515*^9, 3.94395655536333*^9}, {3.9439565895078897`*^9, 
    3.943956648067004*^9}, {3.943956689881572*^9, 3.943956695000836*^9}, {
-   3.943956735145523*^9, 3.943956879243844*^9}, 3.943956966035789*^9},
- CellLabel->
-  "In[494]:=",ExpressionUUID->"ae262461-e775-4ffd-ae26-712933c38e8f"],
+   3.943956735145523*^9, 3.943956879243844*^9}, 3.943956966035789*^9, {
+   3.9439595955820093`*^9, 3.943959603246179*^9}, {3.943959754307148*^9, 
+   3.943959768661125*^9}, {3.94395990587654*^9, 3.943959905878695*^9}, {
+   3.943967981143673*^9, 3.9439679850245857`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"ae262461-e775-4ffd-ae26-712933c38e8f"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[{
+ RowBox[{"Clear", "[", "fn", "]"}], "\n", 
  RowBox[{
   RowBox[{"fn", "[", "x_", "]"}], ":=", 
   RowBox[{
@@ -325,23 +281,24 @@ Cell[BoxData[{
    3.943956247488158*^9, {3.943956281021668*^9, 3.943956289707321*^9}, {
    3.943957019492955*^9, 3.943957046635229*^9}, {3.9439592384929333`*^9, 
    3.9439592726418667`*^9}, {3.943959308903*^9, 3.943959324703862*^9}, {
-   3.9439593992984037`*^9, 3.94395940782876*^9}},
+   3.9439593992984037`*^9, 3.94395940782876*^9}, {3.943969938057578*^9, 
+   3.9439699424091997`*^9}},
  CellLabel->
-  "In[526]:=",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
+  "In[265]:=",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{bisect`i$$ = 15, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`i$$ = 15, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
-      Hold[bisect`i$$], 1, 15, 1, ControlType -> Animator}}, 
-    Typeset`size$$ = {360., {108.81558398623118`, 114.44058398623118`}}, 
+      Hold[$CellContext`i$$], 1, 15, 1, ControlType -> Animator}}, 
+    Typeset`size$$ = {360., {108.30652135228179`, 113.93152135228179`}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
     Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
     DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {bisect`i$$ = 1}, 
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 1}, 
       "ControllerVariables" :> {}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
@@ -349,8 +306,31 @@ Cell[BoxData[
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
         Typeset`keyframeList$$}, "Body" :> Plot[
-        bisect`fn[$CellContext`x], {$CellContext`x, Part[
-           Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+        $CellContext`fn[$CellContext`x], {$CellContext`x, -Max[
+           Map[Abs[#]& , 
+            Flatten[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+               Rational[-5, 2]}, {
+               Rational[-13, 4], 
+               Rational[-5, 2]}, {
+               Rational[-23, 8], 
+               Rational[-5, 2]}, {
+               Rational[-23, 8], 
+               Rational[-43, 16]}, {
+               Rational[-23, 8], 
+               Rational[-89, 32]}, {
+               Rational[-23, 8], 
+               Rational[-181, 64]}, {
+               Rational[-23, 8], 
+               Rational[-365, 128]}, {
+               Rational[-733, 256], 
+               Rational[-365, 128]}, {
+               Rational[-733, 256], 
+               Rational[-1463, 512]}, {
+               Rational[-733, 256], 
+               Rational[-2929, 1024]}}]]], 
+         Max[
+          Map[Abs[#]& , 
+           Flatten[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
               Rational[-5, 2]}, {
               Rational[-13, 4], 
               Rational[-5, 2]}, {
@@ -369,73 +349,30 @@ Cell[BoxData[
               Rational[-733, 256], 
               Rational[-1463, 512]}, {
               Rational[-733, 256], 
-              Rational[-2929, 1024]}}, 1], 1] - 1, Part[
-           Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-              Rational[-5, 2]}, {
-              Rational[-13, 4], 
-              Rational[-5, 2]}, {
-              Rational[-23, 8], 
-              Rational[-5, 2]}, {
-              Rational[-23, 8], 
-              Rational[-43, 16]}, {
-              Rational[-23, 8], 
-              Rational[-89, 32]}, {
-              Rational[-23, 8], 
-              Rational[-181, 64]}, {
-              Rational[-23, 8], 
-              Rational[-365, 128]}, {
-              Rational[-733, 256], 
-              Rational[-365, 128]}, {
-              Rational[-733, 256], 
-              Rational[-1463, 512]}, {
-              Rational[-733, 256], 
-              Rational[-2929, 1024]}}, 1], 2] + 1}, PlotRange -> Max[{
-            Abs[
-             bisect`fn[
-              Part[
-               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                  Rational[-5, 2]}, {
-                  Rational[-13, 4], 
-                  Rational[-5, 2]}, {
-                  Rational[-23, 8], 
-                  Rational[-5, 2]}, {
-                  Rational[-23, 8], 
-                  Rational[-43, 16]}, {
-                  Rational[-23, 8], 
-                  Rational[-89, 32]}, {
-                  Rational[-23, 8], 
-                  Rational[-181, 64]}, {
-                  Rational[-23, 8], 
-                  Rational[-365, 128]}, {
-                  Rational[-733, 256], 
-                  Rational[-365, 128]}, {
-                  Rational[-733, 256], 
-                  Rational[-1463, 512]}, {
-                  Rational[-733, 256], 
-                  Rational[-2929, 1024]}}, 1], 1]]], 
-            Abs[
-             bisect`fn[Part[
-                Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                   Rational[-5, 2]}, {
-                   Rational[-13, 4], 
-                   Rational[-5, 2]}, {
-                   Rational[-23, 8], 
-                   Rational[-5, 2]}, {
-                   Rational[-23, 8], 
-                   Rational[-43, 16]}, {
-                   Rational[-23, 8], 
-                   Rational[-89, 32]}, {
-                   Rational[-23, 8], 
-                   Rational[-181, 64]}, {
-                   Rational[-23, 8], 
-                   Rational[-365, 128]}, {
-                   Rational[-733, 256], 
-                   Rational[-365, 128]}, {
-                   Rational[-733, 256], 
-                   Rational[-1463, 512]}, {
-                   Rational[-733, 256], 
-                   Rational[-2929, 1024]}}, 1], 2] + 1]]}] + 1, Epilog -> 
-        If[bisect`i$$ >= Length[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+              Rational[-2929, 1024]}}]]]}, PlotRange -> Max[
+           Map[Abs[
+             $CellContext`fn[#]]& , 
+            Flatten[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+               Rational[-5, 2]}, {
+               Rational[-13, 4], 
+               Rational[-5, 2]}, {
+               Rational[-23, 8], 
+               Rational[-5, 2]}, {
+               Rational[-23, 8], 
+               Rational[-43, 16]}, {
+               Rational[-23, 8], 
+               Rational[-89, 32]}, {
+               Rational[-23, 8], 
+               Rational[-181, 64]}, {
+               Rational[-23, 8], 
+               Rational[-365, 128]}, {
+               Rational[-733, 256], 
+               Rational[-365, 128]}, {
+               Rational[-733, 256], 
+               Rational[-1463, 512]}, {
+               Rational[-733, 256], 
+               Rational[-2929, 1024]}}]]] + 1, Epilog -> 
+        If[$CellContext`i$$ >= Length[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
               Rational[-5, 2]}, {
               Rational[-13, 4], 
               Rational[-5, 2]}, {
@@ -464,101 +401,13 @@ Cell[BoxData[
                N[
                 Rational[-2929, 1024]], 
                N[
-                bisect`fn[
+                $CellContext`fn[
                  Rational[-2929, 1024]]]}], {
               Rational[-2929, 1024], 0}, {-1, -2}], Bold]}, 
           Join[{Pink, 
-            PointSize[0.02], 
-            Point[{
-              Part[
-               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                  Rational[-5, 2]}, {
-                  Rational[-13, 4], 
-                  Rational[-5, 2]}, {
-                  Rational[-23, 8], 
-                  Rational[-5, 2]}, {
-                  Rational[-23, 8], 
-                  Rational[-43, 16]}, {
-                  Rational[-23, 8], 
-                  Rational[-89, 32]}, {
-                  Rational[-23, 8], 
-                  Rational[-181, 64]}, {
-                  Rational[-23, 8], 
-                  Rational[-365, 128]}, {
-                  Rational[-733, 256], 
-                  Rational[-365, 128]}, {
-                  Rational[-733, 256], 
-                  Rational[-1463, 512]}, {
-                  Rational[-733, 256], 
-                  Rational[-2929, 1024]}}, bisect`i$$], 1], 
-              bisect`fn[
-               Part[
-                Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                   Rational[-5, 2]}, {
-                   Rational[-13, 4], 
-                   Rational[-5, 2]}, {
-                   Rational[-23, 8], 
-                   Rational[-5, 2]}, {
-                   Rational[-23, 8], 
-                   Rational[-43, 16]}, {
-                   Rational[-23, 8], 
-                   Rational[-89, 32]}, {
-                   Rational[-23, 8], 
-                   Rational[-181, 64]}, {
-                   Rational[-23, 8], 
-                   Rational[-365, 128]}, {
-                   Rational[-733, 256], 
-                   Rational[-365, 128]}, {
-                   Rational[-733, 256], 
-                   Rational[-1463, 512]}, {
-                   Rational[-733, 256], 
-                   Rational[-2929, 1024]}}, bisect`i$$], 1]]}], 
-            Point[{
-              Part[
-               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                  Rational[-5, 2]}, {
-                  Rational[-13, 4], 
-                  Rational[-5, 2]}, {
-                  Rational[-23, 8], 
-                  Rational[-5, 2]}, {
-                  Rational[-23, 8], 
-                  Rational[-43, 16]}, {
-                  Rational[-23, 8], 
-                  Rational[-89, 32]}, {
-                  Rational[-23, 8], 
-                  Rational[-181, 64]}, {
-                  Rational[-23, 8], 
-                  Rational[-365, 128]}, {
-                  Rational[-733, 256], 
-                  Rational[-365, 128]}, {
-                  Rational[-733, 256], 
-                  Rational[-1463, 512]}, {
-                  Rational[-733, 256], 
-                  Rational[-2929, 1024]}}, bisect`i$$], 2], 
-              bisect`fn[
-               Part[
-                Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                   Rational[-5, 2]}, {
-                   Rational[-13, 4], 
-                   Rational[-5, 2]}, {
-                   Rational[-23, 8], 
-                   Rational[-5, 2]}, {
-                   Rational[-23, 8], 
-                   Rational[-43, 16]}, {
-                   Rational[-23, 8], 
-                   Rational[-89, 32]}, {
-                   Rational[-23, 8], 
-                   Rational[-181, 64]}, {
-                   Rational[-23, 8], 
-                   Rational[-365, 128]}, {
-                   Rational[-733, 256], 
-                   Rational[-365, 128]}, {
-                   Rational[-733, 256], 
-                   Rational[-1463, 512]}, {
-                   Rational[-733, 256], 
-                   Rational[-2929, 1024]}}, bisect`i$$], 2]]}]}, 
-           Map[InfiniteLine[{#, 
-              bisect`fn[#]}, {0, 1}]& , 
+            PointSize[0.02]}, 
+           Map[Point[{#, 
+              $CellContext`fn[#]}]& , 
             Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
                Rational[-5, 2]}, {
                Rational[-13, 4], 
@@ -578,17 +427,39 @@ Cell[BoxData[
                Rational[-733, 256], 
                Rational[-1463, 512]}, {
                Rational[-733, 256], 
-               Rational[-2929, 1024]}}, bisect`i$$]]]]], 
-      "Specifications" :> {{
-        bisect`i$$, 1, 15, 1, AnimationRunning -> False, AnimationRepetitions -> 
-         2, AppearanceElements -> {
+               Rational[-2929, 1024]}}, $CellContext`i$$]], 
+           Map[InfiniteLine[{#, 
+              $CellContext`fn[#]}, {0, 1}]& , 
+            Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+               Rational[-5, 2]}, {
+               Rational[-13, 4], 
+               Rational[-5, 2]}, {
+               Rational[-23, 8], 
+               Rational[-5, 2]}, {
+               Rational[-23, 8], 
+               Rational[-43, 16]}, {
+               Rational[-23, 8], 
+               Rational[-89, 32]}, {
+               Rational[-23, 8], 
+               Rational[-181, 64]}, {
+               Rational[-23, 8], 
+               Rational[-365, 128]}, {
+               Rational[-733, 256], 
+               Rational[-365, 128]}, {
+               Rational[-733, 256], 
+               Rational[-1463, 512]}, {
+               Rational[-733, 256], 
+               Rational[-2929, 1024]}}, $CellContext`i$$]]]]], 
+      "Specifications" :> {{$CellContext`i$$, 1, 15, 1, AnimationRunning -> 
+         False, AnimationRepetitions -> 2, 
+         AppearanceElements -> {
           "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
            "DirectionButton"}}}, 
       "Options" :> {
        ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
         "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
         True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
-     ImageSizeCache->{405.1, {143.31558398623116`, 148.94058398623116`}},
+     ImageSizeCache->{405.1, {142.80652135228178`, 148.43152135228178`}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -626,15 +497,271 @@ Cell[BoxData[
    3.94395889079202*^9, {3.9439589966309032`*^9, 3.943959028770595*^9}, 
    3.9439591139409933`*^9, {3.943959258274095*^9, 3.943959273280189*^9}, {
    3.943959314553814*^9, 3.943959349022561*^9}, {3.9439594018793583`*^9, 
-   3.943959408947772*^9}, 3.943959445698399*^9},
+   3.943959408947772*^9}, 3.943959445698399*^9, 3.943967103564581*^9, 
+   3.943967420069573*^9, 3.943967988690948*^9, 3.9439686534454823`*^9, 
+   3.943969601287429*^9, {3.943969933726124*^9, 3.943969942956327*^9}, 
+   3.94397026592493*^9},
  CellLabel->
-  "Out[528]=",ExpressionUUID->"9062a160-fee4-4cda-853f-ac7c772889bb"]
+  "Out[268]=",ExpressionUUID->"d9a277b6-e262-4eb1-a552-67b3b4903cc1"]
 }, Open  ]],
 
-Cell[BoxData[""], "Code",ExpressionUUID->"23c6f50a-f086-4d9b-8708-d8c121bcffec"]
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"newtonRawson", " ", "=", " ", 
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "f", ",", " ", "around", ",", " ", "iterationsLimit", ",", " ", 
+       "minInterval", ",", " ", "precision"}], "}"}], ",", "\n", "\t", 
+     RowBox[{
+      RowBox[{"root", " ", "=", " ", "around"}], ";", "\n", "\t", 
+      RowBox[{"approximations", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{"{", "around", "}"}], "}"}]}], ";", "\n", "\t", 
+      RowBox[{"Begin", "[", "\"\<newtonRawson`\>\"", "]"}], ";", " ", "\n", 
+      "\t", 
+      RowBox[{"midValue", " ", "=", " ", 
+       RowBox[{"f", "[", "root", "]"}]}], ";", " ", "\n", "\t", 
+      RowBox[{"width", " ", "=", " ", "minInterval"}], ";", "\n", "\t", 
+      RowBox[{"df", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"Derivative", "[", "1", "]"}], "[", "f", "]"}]}], ";", "\n", 
+      "\t", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", " ", "=", " ", "0"}], ",", " ", 
+        RowBox[{
+         RowBox[{"i", " ", "<", " ", "iterationsLimit"}], " ", "&&", " ", 
+         RowBox[{
+          RowBox[{"Abs", "[", "width", "]"}], " ", ">=", " ", "minInterval"}],
+          " ", "&&", " ", 
+         RowBox[{
+          RowBox[{"Abs", "[", "midValue", "]"}], " ", ">=", " ", 
+          "precision"}]}], ",", " ", 
+        RowBox[{"++", "i"}], ",", "\n", "\t\t", 
+        RowBox[{
+         RowBox[{"newRoot", " ", "=", " ", 
+          RowBox[{"root", " ", "-", " ", 
+           FractionBox["midValue", 
+            RowBox[{"df", "[", "root", "]"}]]}]}], ";", "\n", "\t\t", 
+         RowBox[{"width", " ", "=", " ", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"newRoot", " ", "-", " ", "root"}], "]"}]}], ";", "\n", 
+         "\t\t", 
+         RowBox[{"root", " ", "=", " ", "newRoot"}], ";", "\n", "\t\t", 
+         RowBox[{"approximations", " ", "=", " ", 
+          RowBox[{"Join", "[", 
+           RowBox[{"approximations", ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"{", "root", "}"}], "}"}]}], "]"}]}], ";", "\n", "\t\t", 
+         
+         RowBox[{"midValue", " ", "=", " ", 
+          RowBox[{"N", "[", 
+           RowBox[{"f", "[", "root", "]"}], "]"}]}], ";"}]}], "\n", "\t", 
+       "]"}], ";", "\n", "\t", 
+      RowBox[{"End", "[", "]"}], ";", "\n", "\t", 
+      RowBox[{"{", 
+       RowBox[{"root", ",", " ", "approximations"}], "}"}]}]}], "\n", "]"}]}],
+   ";"}]], "Code",
+ CellChangeTimes->{{3.943959530950391*^9, 3.943959635311912*^9}, {
+   3.943959669422656*^9, 3.943959687249237*^9}, 3.943959776509089*^9, {
+   3.94395990588022*^9, 3.943959905880958*^9}, {3.943966585641069*^9, 
+   3.9439666576189823`*^9}, {3.9439667023891277`*^9, 
+   3.9439668354252243`*^9}, {3.94396705981248*^9, 3.943967086467078*^9}, {
+   3.9439671198452673`*^9, 3.9439671364332657`*^9}, {3.943967177736511*^9, 
+   3.943967221619917*^9}, {3.9439673747664337`*^9, 3.9439674075486813`*^9}, {
+   3.943967810604444*^9, 3.943967901215488*^9}, {3.9439679584715977`*^9, 
+   3.94396796933525*^9}, 3.943968031731523*^9, {3.94396810990485*^9, 
+   3.9439681694161997`*^9}, {3.943968638855351*^9, 3.9439686507695103`*^9}, {
+   3.9439688130309353`*^9, 3.943968813770563*^9}, {3.943968853675736*^9, 
+   3.9439689379931593`*^9}, {3.943969045093539*^9, 3.943969047524032*^9}, {
+   3.943969086170415*^9, 3.943969100883565*^9}, {3.943969302582837*^9, 
+   3.943969317940898*^9}, {3.943969355309366*^9, 3.94396955327984*^9}, {
+   3.943970738489743*^9, 3.943970740321191*^9}},
+ CellLabel->
+  "In[401]:=",ExpressionUUID->"23c6f50a-f086-4d9b-8708-d8c121bcffec"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "fn2", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"fn2", "=", 
+   RowBox[{"Function", "[", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Exp", "[", "x", "]"}], 
+       RowBox[{"Sin", "[", "x", "]"}]}], "+", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"x", "-", "9"}], ")"}], "2"]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"pt", ",", " ", "approx"}], "}"}], " ", "=", " ", 
+   RowBox[{"newtonRawson", "[", 
+    RowBox[{"fn2", ",", " ", 
+     RowBox[{"-", "20"}], ",", " ", "30", ",", " ", 
+     SuperscriptBox["10", 
+      RowBox[{"-", "3"}]], ",", " ", "0.01"}], "]"}]}], ";"}], "\n", 
+ RowBox[{"visualize", "[", 
+  RowBox[{"pt", ",", " ", "approx", ",", " ", "fn2"}], "]"}]}], "Code",
+ CellChangeTimes->{{3.943966848130879*^9, 3.943966856349724*^9}, {
+   3.943966893205454*^9, 3.9439670350660467`*^9}, {3.9439671514816008`*^9, 
+   3.943967154443789*^9}, {3.9439677587646427`*^9, 3.9439677704716873`*^9}, {
+   3.94396780587641*^9, 3.943967805950519*^9}, {3.943967942668722*^9, 
+   3.9439679472382*^9}, 3.943968633429041*^9, {3.943968665493064*^9, 
+   3.943968671537973*^9}, {3.943968762777913*^9, 3.943968822572336*^9}, {
+   3.9439689413503723`*^9, 3.943969079102187*^9}, 3.943969114310482*^9, {
+   3.943969174238509*^9, 3.943969205857519*^9}, {3.943969253303771*^9, 
+   3.943969278054291*^9}, {3.94396932706075*^9, 3.943969334726925*^9}, {
+   3.943969567513447*^9, 3.943969622911933*^9}, {3.9439696565702467`*^9, 
+   3.943969819254115*^9}, {3.943969960451707*^9, 3.943969964172682*^9}, {
+   3.943970000537632*^9, 3.9439701045954227`*^9}, {3.943970286356023*^9, 
+   3.9439703586971893`*^9}, {3.943970475295019*^9, 3.943970697010314*^9}},
+ CellLabel->
+  "In[402]:=",ExpressionUUID->"de064d5e-1bbe-4a38-b716-0964d8d2011d"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i$$ = 11, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`i$$], 1, 11, 1, ControlType -> Animator}}, 
+    Typeset`size$$ = {360., {109.87222862981638`, 115.49722862981638`}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> Plot[
+        Function[$CellContext`x, 
+         Exp[$CellContext`x] 
+          Sin[$CellContext`x] + ($CellContext`x - 
+           9)^2][$CellContext`x], {$CellContext`x, -Max[
+           Map[Abs[#]& , 
+            
+            Flatten[{{-20}, {-20 - (841 - E^(-20) Sin[20])/(-58 + 
+               E^(-20) Cos[20] - E^(-20) Sin[20])}, {1.7515446230171179`}, {
+              7.653142051853505}, {6.820658168971757}, {
+              6.4421321609752145`}, {6.293826687249866}, {
+              6.269668401830821}, {6.2690596240963306`}}]]], 
+         Max[
+          Map[Abs[#]& , 
+           
+           Flatten[{{-20}, {-20 - (841 - E^(-20) Sin[20])/(-58 + 
+              E^(-20) Cos[20] - E^(-20) Sin[20])}, {1.7515446230171179`}, {
+             7.653142051853505}, {6.820658168971757}, {6.4421321609752145`}, {
+             6.293826687249866}, {6.269668401830821}, {
+             6.2690596240963306`}}]]]}, PlotRange -> Max[
+           Map[Abs[
+             
+             Function[$CellContext`x, 
+              Exp[$CellContext`x] 
+               Sin[$CellContext`x] + ($CellContext`x - 9)^2][#]]& , 
+            
+            Flatten[{{-20}, {-20 - (841 - E^(-20) Sin[20])/(-58 + 
+               E^(-20) Cos[20] - E^(-20) Sin[20])}, {1.7515446230171179`}, {
+              7.653142051853505}, {6.820658168971757}, {
+              6.4421321609752145`}, {6.293826687249866}, {
+              6.269668401830821}, {6.2690596240963306`}}]]] + 1, Epilog -> 
+        If[$CellContext`i$$ >= 
+          Length[{{-20}, {-20 - (841 - E^(-20) Sin[20])/(-58 + 
+              E^(-20) Cos[20] - E^(-20) Sin[20])}, {1.7515446230171179`}, {
+             7.653142051853505}, {6.820658168971757}, {6.4421321609752145`}, {
+             6.293826687249866}, {6.269668401830821}, {
+             6.2690596240963306`}}], {
+           PointSize[Large], 
+           Point[{6.2690596240963306`, 0}], 
+           Style[
+            Text[
+             ToString[{
+               N[6.2690596240963306`], 
+               N[
+                
+                Function[$CellContext`x, 
+                 Exp[$CellContext`x] 
+                  Sin[$CellContext`x] + ($CellContext`x - 9)^2][
+                6.2690596240963306`]]}], {6.2690596240963306`, 0}, {-1, -2}], 
+            Bold]}, 
+          Join[{Pink, 
+            PointSize[0.02]}, 
+           Map[Point[{#, 
+              
+              Function[$CellContext`x, 
+               Exp[$CellContext`x] 
+                Sin[$CellContext`x] + ($CellContext`x - 9)^2][#]}]& , 
+            
+            Part[{{-20}, {-20 - (841 - E^(-20) Sin[20])/(-58 + 
+               E^(-20) Cos[20] - E^(-20) Sin[20])}, {1.7515446230171179`}, {
+              7.653142051853505}, {6.820658168971757}, {
+              6.4421321609752145`}, {6.293826687249866}, {
+              6.269668401830821}, {6.2690596240963306`}}, $CellContext`i$$]], 
+           
+           Map[InfiniteLine[{#, 
+              
+              Function[$CellContext`x, 
+               Exp[$CellContext`x] 
+                Sin[$CellContext`x] + ($CellContext`x - 9)^2][#]}, {0, 1}]& , 
+            
+            
+            Part[{{-20}, {-20 - (841 - E^(-20) Sin[20])/(-58 + 
+               E^(-20) Cos[20] - E^(-20) Sin[20])}, {1.7515446230171179`}, {
+              7.653142051853505}, {6.820658168971757}, {
+              6.4421321609752145`}, {6.293826687249866}, {
+              6.269668401830821}, {
+              6.2690596240963306`}}, $CellContext`i$$]]]]], 
+      "Specifications" :> {{$CellContext`i$$, 1, 11, 1, AnimationRunning -> 
+         False, AnimationRepetitions -> 2, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405.1, {144.37222862981636`, 149.99722862981636`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.9439687764561663`*^9, 3.943968823671795*^9}, 
+   3.943968907322403*^9, {3.9439689536387997`*^9, 3.9439691157233973`*^9}, {
+   3.943969187266301*^9, 3.943969225198545*^9}, {3.943969258022784*^9, 
+   3.943969278508731*^9}, {3.94396932011043*^9, 3.943969358393244*^9}, 
+   3.943969449842908*^9, 3.9439695078129883`*^9, {3.943969562403449*^9, 
+   3.943969570842421*^9}, 3.943969623501896*^9, {3.943969665526457*^9, 
+   3.943969788175593*^9}, 3.9439698198026543`*^9, 3.9439699647149677`*^9, {
+   3.9439700019041157`*^9, 3.9439701058804407`*^9}, {3.943970276639662*^9, 
+   3.9439703593037233`*^9}, {3.943970481313313*^9, 3.9439704912913*^9}, {
+   3.943970522563465*^9, 3.943970664981722*^9}, 3.943970713936928*^9, 
+   3.9439707442024403`*^9},
+ CellLabel->
+  "Out[405]=",ExpressionUUID->"82d12844-03e8-484a-96ca-d33bcf478cff"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{
+  3.9439698283128138`*^9},ExpressionUUID->"39384952-495b-46b0-b79f-\
+471ea73f3243"]
 },
 WindowSize->{1435.5, 761.25},
-WindowMargins->{{-1442.25, Automatic}, {Automatic, -22.5}},
+WindowMargins->{{-2.25, Automatic}, {Automatic, -22.5}},
 FrontEndVersion->"14.1 for Linux x86 (64-bit) (July 16, 2024)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"07f04d2e-f557-4ab6-ab18-bd6cd467aeee"
@@ -650,14 +777,18 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 993, 26, 92, "Code",ExpressionUUID->"059011d8-67e6-4bb9-bdb1-65e01fd157e9"],
-Cell[1550, 48, 4820, 125, 157, "Code",ExpressionUUID->"f23f8236-82bd-4721-b04d-9e92b1038475"],
-Cell[6373, 175, 5438, 104, 640, "Code",ExpressionUUID->"ae262461-e775-4ffd-ae26-712933c38e8f"],
+Cell[554, 20, 3889, 100, 155, "Code",ExpressionUUID->"f23f8236-82bd-4721-b04d-9e92b1038475"],
+Cell[4446, 122, 5868, 112, 690, "Code",ExpressionUUID->"ae262461-e775-4ffd-ae26-712933c38e8f"],
 Cell[CellGroupData[{
-Cell[11836, 283, 2650, 46, 92, "Code",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
-Cell[14489, 331, 12875, 299, 309, "Output",ExpressionUUID->"9062a160-fee4-4cda-853f-ac7c772889bb"]
+Cell[10339, 238, 2745, 48, 111, "Code",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
+Cell[13087, 288, 9561, 216, 308, "Output",ExpressionUUID->"d9a277b6-e262-4eb1-a552-67b3b4903cc1"]
 }, Open  ]],
-Cell[27379, 633, 80, 0, 51, "Code",ExpressionUUID->"23c6f50a-f086-4d9b-8708-d8c121bcffec"]
+Cell[22663, 507, 3584, 75, 404, "Code",ExpressionUUID->"23c6f50a-f086-4d9b-8708-d8c121bcffec"],
+Cell[CellGroupData[{
+Cell[26272, 586, 1829, 38, 113, "Code",ExpressionUUID->"de064d5e-1bbe-4a38-b716-0964d8d2011d"],
+Cell[28104, 626, 6296, 128, 311, "Output",ExpressionUUID->"82d12844-03e8-484a-96ca-d33bcf478cff"]
+}, Open  ]],
+Cell[34415, 757, 130, 3, 29, "Input",ExpressionUUID->"39384952-495b-46b0-b79f-471ea73f3243"]
 }
 ]
 *)
