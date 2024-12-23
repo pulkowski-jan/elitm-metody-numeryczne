@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     28504,        667]
-NotebookOptionsPosition[     27726,        647]
-NotebookOutlinePosition[     28131,        663]
-CellTagsIndexPosition[     28088,        660]
+NotebookDataLength[     27248,        628]
+NotebookOptionsPosition[     26470,        608]
+NotebookOutlinePosition[     26875,        624]
+CellTagsIndexPosition[     26832,        621]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -199,82 +199,88 @@ Cell[BoxData[
          RowBox[{"i", " ", "==", " ", 
           RowBox[{"Length", "[", "bounds", "]"}]}], ",", " ", 
          RowBox[{"{", 
-          RowBox[{"Red", ",", " ", 
-           RowBox[{"PointSize", "[", "0.02", "]"}], ",", " ", 
+          RowBox[{
+           RowBox[{"PointSize", "[", "Large", "]"}], ",", " ", 
            RowBox[{"Point", "[", 
             RowBox[{"{", 
-             RowBox[{"pt", ",", " ", "0"}], "}"}], "]"}]}], "}"}], ",", "\n", 
-         "\t\t", 
-         RowBox[{"{", " ", 
-          RowBox[{"Pink", ",", " ", 
-           RowBox[{"PointSize", "[", "0.02", "]"}], ",", " ", 
-           RowBox[{"Point", "[", 
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"bounds", "[", 
-                RowBox[{"[", "i", "]"}], "]"}], "[", 
-               RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
-              RowBox[{"f", "[", 
-               RowBox[{
-                RowBox[{"bounds", "[", 
-                 RowBox[{"[", "i", "]"}], "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}], "]"}], ",", 
-           " ", 
-           RowBox[{"Point", "[", 
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"bounds", "[", 
-                RowBox[{"[", "i", "]"}], "]"}], "[", 
-               RowBox[{"[", "2", "]"}], "]"}], ",", " ", 
-              RowBox[{"f", "[", 
-               RowBox[{
-                RowBox[{"bounds", "[", 
-                 RowBox[{"[", "i", "]"}], "]"}], "[", 
-                RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "}"}], "]"}], ",", 
-           "\n", "\t\t\t", 
-           RowBox[{"InfiniteLine", "[", 
+             RowBox[{"pt", ",", " ", "0"}], "}"}], "]"}], ",", " ", 
+           RowBox[{"Style", "[", 
             RowBox[{
-             RowBox[{"{", 
+             RowBox[{"Text", "[", 
               RowBox[{
+               RowBox[{"ToString", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"N", "[", "pt", "]"}], ",", " ", 
+                  RowBox[{"N", "[", 
+                   RowBox[{"f", "[", "pt", "]"}], "]"}]}], "}"}], "]"}], ",", 
+               " ", 
+               RowBox[{"{", 
+                RowBox[{"pt", ",", " ", "0"}], "}"}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"-", "1"}], ",", " ", 
+                 RowBox[{"-", "2"}]}], "}"}]}], "]"}], ",", " ", "Bold"}], 
+            "]"}]}], "}"}], ",", "\n", "\t\t", 
+         RowBox[{"Join", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"Pink", ",", " ", 
+             RowBox[{"PointSize", "[", "0.02", "]"}], ",", " ", 
+             RowBox[{"Point", "[", 
+              RowBox[{"{", 
                RowBox[{
-                RowBox[{"bounds", "[", 
-                 RowBox[{"[", "i", "]"}], "]"}], "[", 
-                RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
-               RowBox[{"f", "[", 
                 RowBox[{
                  RowBox[{"bounds", "[", 
                   RowBox[{"[", "i", "]"}], "]"}], "[", 
-                 RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}], ",", " ", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", " ", "1"}], "}"}]}], "]"}], ",", " ", 
-           RowBox[{"InfiniteLine", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
+                 RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
+                RowBox[{"f", "[", 
+                 RowBox[{
+                  RowBox[{"bounds", "[", 
+                   RowBox[{"[", "i", "]"}], "]"}], "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}], "]"}], ",", 
+             " ", 
+             RowBox[{"Point", "[", 
+              RowBox[{"{", 
                RowBox[{
-                RowBox[{"bounds", "[", 
-                 RowBox[{"[", "i", "]"}], "]"}], "[", 
-                RowBox[{"[", "2", "]"}], "]"}], ",", " ", 
-               RowBox[{"f", "[", 
                 RowBox[{
                  RowBox[{"bounds", "[", 
                   RowBox[{"[", "i", "]"}], "]"}], "[", 
-                 RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "}"}], ",", " ", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", " ", "1"}], "}"}]}], "]"}]}], "\n", "}"}]}], 
-        "]"}]}]}], "]"}], ",", " ", 
+                 RowBox[{"[", "2", "]"}], "]"}], ",", " ", 
+                RowBox[{"f", "[", 
+                 RowBox[{
+                  RowBox[{"bounds", "[", 
+                   RowBox[{"[", "i", "]"}], "]"}], "[", 
+                  RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "}"}], "]"}]}], 
+            "}"}], ",", " ", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"InfiniteLine", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"#", ",", " ", 
+                 RowBox[{"f", "[", "#", "]"}]}], "}"}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "1"}], "}"}]}], "]"}], "&"}], "/@", 
+            RowBox[{"bounds", "[", 
+             RowBox[{"[", "i", "]"}], "]"}]}]}], "]"}]}], "\n", "]"}]}]}], 
+     "]"}], ",", " ", 
     RowBox[{"{", 
      RowBox[{"i", ",", " ", "1", ",", " ", 
       RowBox[{"Length", "[", "bounds", "]"}], ",", " ", "1"}], "}"}], ",", 
     " ", 
     RowBox[{"AnimationRunning", " ", "->", " ", "False"}], ",", " ", 
-    RowBox[{"AnimationRepetitions", " ", "->", " ", "3"}]}], "]"}]}]], "Code",\
+    RowBox[{"AnimationRepetitions", " ", "->", " ", "2"}]}], "]"}]}]], "Code",\
 
- CellChangeTimes->{{3.943956967880821*^9, 3.9439570122484407`*^9}},
+ CellChangeTimes->{{3.943956967880821*^9, 3.9439570122484407`*^9}, {
+  3.9439572090512123`*^9, 3.9439572705707293`*^9}, {3.943957383934802*^9, 
+  3.943957427908643*^9}, {3.9439574729790363`*^9, 3.943957489559751*^9}, {
+  3.943957535678379*^9, 3.943957787128927*^9}, {3.943957817234869*^9, 
+  3.943957866954214*^9}, {3.943957911214942*^9, 3.943957920456327*^9}, {
+  3.9439587901157513`*^9, 3.943958883946742*^9}, {3.943958982987142*^9, 
+  3.9439590433803167`*^9}},
  CellLabel->
-  "In[394]:=",ExpressionUUID->"0da7c476-4a86-443e-9e07-74d2f3a58d69"],
+  "In[489]:=",ExpressionUUID->"0da7c476-4a86-443e-9e07-74d2f3a58d69"],
 
 Cell[CellGroupData[{
 
@@ -319,7 +325,7 @@ Cell[BoxData[{
    3.943956247488158*^9, {3.943956281021668*^9, 3.943956289707321*^9}, {
    3.943957019492955*^9, 3.943957046635229*^9}},
  CellLabel->
-  "In[401]:=",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
+  "In[486]:=",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
 
 Cell[BoxData[
  TagBox[
@@ -436,32 +442,22 @@ Cell[BoxData[
               Rational[-769, 256], 
               Rational[-383, 128]}, {
               Rational[-769, 256], 
-              Rational[-1535, 512]}}], {Red, 
-           PointSize[0.02], 
+              Rational[-1535, 512]}}], {
+           PointSize[Large], 
            Point[{
-             Rational[-1535, 512], 0}]}, {Pink, 
-           PointSize[0.02], 
-           Point[{
-             Part[
-              Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                 Rational[-5, 2]}, {
-                 Rational[-13, 4], 
-                 Rational[-5, 2]}, {
-                 Rational[-13, 4], 
-                 Rational[-23, 8]}, {
-                 Rational[-49, 16], 
-                 Rational[-23, 8]}, {
-                 Rational[-49, 16], 
-                 Rational[-95, 32]}, {
-                 Rational[-193, 64], 
-                 Rational[-95, 32]}, {
-                 Rational[-193, 64], 
-                 Rational[-383, 128]}, {
-                 Rational[-769, 256], 
-                 Rational[-383, 128]}, {
-                 Rational[-769, 256], 
-                 Rational[-1535, 512]}}, bisect`i$$], 1], 
-             bisect`fn[
+             Rational[-1535, 512], 0}], 
+           Style[
+            Text[
+             ToString[{
+               N[
+                Rational[-1535, 512]], 
+               N[
+                bisect`fn[
+                 Rational[-1535, 512]]]}], {
+              Rational[-1535, 512], 0}, {-1, -2}], Bold]}, 
+          Join[{Pink, 
+            PointSize[0.02], 
+            Point[{
               Part[
                Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
                   Rational[-5, 2]}, {
@@ -480,28 +476,28 @@ Cell[BoxData[
                   Rational[-769, 256], 
                   Rational[-383, 128]}, {
                   Rational[-769, 256], 
-                  Rational[-1535, 512]}}, bisect`i$$], 1]]}], 
-           Point[{
-             Part[
-              Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                 Rational[-5, 2]}, {
-                 Rational[-13, 4], 
-                 Rational[-5, 2]}, {
-                 Rational[-13, 4], 
-                 Rational[-23, 8]}, {
-                 Rational[-49, 16], 
-                 Rational[-23, 8]}, {
-                 Rational[-49, 16], 
-                 Rational[-95, 32]}, {
-                 Rational[-193, 64], 
-                 Rational[-95, 32]}, {
-                 Rational[-193, 64], 
-                 Rational[-383, 128]}, {
-                 Rational[-769, 256], 
-                 Rational[-383, 128]}, {
-                 Rational[-769, 256], 
-                 Rational[-1535, 512]}}, bisect`i$$], 2], 
-             bisect`fn[
+                  Rational[-1535, 512]}}, bisect`i$$], 1], 
+              bisect`fn[
+               Part[
+                Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                   Rational[-5, 2]}, {
+                   Rational[-13, 4], 
+                   Rational[-5, 2]}, {
+                   Rational[-13, 4], 
+                   Rational[-23, 8]}, {
+                   Rational[-49, 16], 
+                   Rational[-23, 8]}, {
+                   Rational[-49, 16], 
+                   Rational[-95, 32]}, {
+                   Rational[-193, 64], 
+                   Rational[-95, 32]}, {
+                   Rational[-193, 64], 
+                   Rational[-383, 128]}, {
+                   Rational[-769, 256], 
+                   Rational[-383, 128]}, {
+                   Rational[-769, 256], 
+                   Rational[-1535, 512]}}, bisect`i$$], 1]]}], 
+            Point[{
               Part[
                Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
                   Rational[-5, 2]}, {
@@ -520,87 +516,47 @@ Cell[BoxData[
                   Rational[-769, 256], 
                   Rational[-383, 128]}, {
                   Rational[-769, 256], 
-                  Rational[-1535, 512]}}, bisect`i$$], 2]]}], 
-           InfiniteLine[{
-             Part[
-              Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                 Rational[-5, 2]}, {
-                 Rational[-13, 4], 
-                 Rational[-5, 2]}, {
-                 Rational[-13, 4], 
-                 Rational[-23, 8]}, {
-                 Rational[-49, 16], 
-                 Rational[-23, 8]}, {
-                 Rational[-49, 16], 
-                 Rational[-95, 32]}, {
-                 Rational[-193, 64], 
-                 Rational[-95, 32]}, {
-                 Rational[-193, 64], 
-                 Rational[-383, 128]}, {
-                 Rational[-769, 256], 
-                 Rational[-383, 128]}, {
-                 Rational[-769, 256], 
-                 Rational[-1535, 512]}}, bisect`i$$], 1], 
-             bisect`fn[
-              Part[
-               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                  Rational[-5, 2]}, {
-                  Rational[-13, 4], 
-                  Rational[-5, 2]}, {
-                  Rational[-13, 4], 
-                  Rational[-23, 8]}, {
-                  Rational[-49, 16], 
-                  Rational[-23, 8]}, {
-                  Rational[-49, 16], 
-                  Rational[-95, 32]}, {
-                  Rational[-193, 64], 
-                  Rational[-95, 32]}, {
-                  Rational[-193, 64], 
-                  Rational[-383, 128]}, {
-                  Rational[-769, 256], 
-                  Rational[-383, 128]}, {
-                  Rational[-769, 256], 
-                  Rational[-1535, 512]}}, bisect`i$$], 1]]}, {0, 1}], 
-           InfiniteLine[{
-             Part[
-              Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                 Rational[-5, 2]}, {
-                 Rational[-13, 4], 
-                 Rational[-5, 2]}, {
-                 Rational[-13, 4], 
-                 Rational[-23, 8]}, {
-                 Rational[-49, 16], 
-                 Rational[-23, 8]}, {
-                 Rational[-49, 16], 
-                 Rational[-95, 32]}, {
-                 Rational[-193, 64], 
-                 Rational[-95, 32]}, {
-                 Rational[-193, 64], 
-                 Rational[-383, 128]}, {
-                 Rational[-769, 256], 
-                 Rational[-383, 128]}, {
-                 Rational[-769, 256], 
-                 Rational[-1535, 512]}}, bisect`i$$], 2], 
-             bisect`fn[
-              Part[
-               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
-                  Rational[-5, 2]}, {
-                  Rational[-13, 4], 
-                  Rational[-5, 2]}, {
-                  Rational[-13, 4], 
-                  Rational[-23, 8]}, {
-                  Rational[-49, 16], 
-                  Rational[-23, 8]}, {
-                  Rational[-49, 16], 
-                  Rational[-95, 32]}, {
-                  Rational[-193, 64], 
-                  Rational[-95, 32]}, {
-                  Rational[-193, 64], 
-                  Rational[-383, 128]}, {
-                  Rational[-769, 256], 
-                  Rational[-383, 128]}, {
-                  Rational[-769, 256], 
-                  Rational[-1535, 512]}}, bisect`i$$], 2]]}, {0, 1}]}]], 
+                  Rational[-1535, 512]}}, bisect`i$$], 2], 
+              bisect`fn[
+               Part[
+                Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                   Rational[-5, 2]}, {
+                   Rational[-13, 4], 
+                   Rational[-5, 2]}, {
+                   Rational[-13, 4], 
+                   Rational[-23, 8]}, {
+                   Rational[-49, 16], 
+                   Rational[-23, 8]}, {
+                   Rational[-49, 16], 
+                   Rational[-95, 32]}, {
+                   Rational[-193, 64], 
+                   Rational[-95, 32]}, {
+                   Rational[-193, 64], 
+                   Rational[-383, 128]}, {
+                   Rational[-769, 256], 
+                   Rational[-383, 128]}, {
+                   Rational[-769, 256], 
+                   Rational[-1535, 512]}}, bisect`i$$], 2]]}]}, 
+           Map[InfiniteLine[{#, 
+              bisect`fn[#]}, {0, 1}]& , 
+            Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+               Rational[-5, 2]}, {
+               Rational[-13, 4], 
+               Rational[-5, 2]}, {
+               Rational[-13, 4], 
+               Rational[-23, 8]}, {
+               Rational[-49, 16], 
+               Rational[-23, 8]}, {
+               Rational[-49, 16], 
+               Rational[-95, 32]}, {
+               Rational[-193, 64], 
+               Rational[-95, 32]}, {
+               Rational[-193, 64], 
+               Rational[-383, 128]}, {
+               Rational[-769, 256], 
+               Rational[-383, 128]}, {
+               Rational[-769, 256], 
+               Rational[-1535, 512]}}, bisect`i$$]]]]], 
       "Specifications" :> {{
         bisect`i$$, 1, 12, 1, AnimationRunning -> False, AnimationRepetitions -> 
          3, AppearanceElements -> {
@@ -640,9 +596,14 @@ Cell[BoxData[
    3.943956398860775*^9, 3.943956456203053*^9}, 3.943956557899733*^9, {
    3.943956592456421*^9, 3.943956650738941*^9}, 3.943956702311119*^9, 
    3.94395674721111*^9, {3.9439568109401083`*^9, 3.943956848525572*^9}, 
-   3.943956882174272*^9, {3.9439570209045773`*^9, 3.943957047154869*^9}},
+   3.943956882174272*^9, {3.9439570209045773`*^9, 3.943957047154869*^9}, 
+   3.943957226116789*^9, 3.943957274454249*^9, {3.9439573971781063`*^9, 
+   3.94395743033636*^9}, 3.943957493271228*^9, {3.943957540077217*^9, 
+   3.943957572834774*^9}, {3.943957777298522*^9, 3.943957791283718*^9}, {
+   3.9439578233456993`*^9, 3.94395786961052*^9}, 3.94395792343475*^9, 
+   3.94395889079202*^9, {3.9439589966309032`*^9, 3.943959028770595*^9}},
  CellLabel->
-  "Out[403]=",ExpressionUUID->"3c62acef-7568-431d-bb38-e4ea884ca01c"]
+  "Out[488]=",ExpressionUUID->"e682d1aa-077e-46a6-a523-429530bb7508"]
 }, Open  ]]
 },
 WindowSize->{1435.5, 761.25},
@@ -664,10 +625,10 @@ CellTagsIndex->{}
 Notebook[{
 Cell[554, 20, 988, 25, 92, "Code",ExpressionUUID->"059011d8-67e6-4bb9-bdb1-65e01fd157e9"],
 Cell[1545, 47, 5416, 104, 640, "Code",ExpressionUUID->"ae262461-e775-4ffd-ae26-712933c38e8f"],
-Cell[6964, 153, 4766, 123, 157, "Code",ExpressionUUID->"0da7c476-4a86-443e-9e07-74d2f3a58d69"],
+Cell[6964, 153, 5160, 129, 157, "Code",ExpressionUUID->"0da7c476-4a86-443e-9e07-74d2f3a58d69"],
 Cell[CellGroupData[{
-Cell[11755, 280, 2395, 41, 92, "Code",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
-Cell[14153, 323, 13557, 321, 309, "Output",ExpressionUUID->"3c62acef-7568-431d-bb38-e4ea884ca01c"]
+Cell[12149, 286, 2395, 41, 92, "Code",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
+Cell[14547, 329, 11907, 276, 309, "Output",ExpressionUUID->"e682d1aa-077e-46a6-a523-429530bb7508"]
 }, Open  ]]
 }
 ]
