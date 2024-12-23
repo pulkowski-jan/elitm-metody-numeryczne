@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[      9056,        206]
-NotebookOptionsPosition[      8286,        186]
-NotebookOutlinePosition[      8691,        202]
-CellTagsIndexPosition[      8648,        199]
+NotebookDataLength[     29729,        707]
+NotebookOptionsPosition[     29046,        688]
+NotebookOutlinePosition[     29451,        704]
+CellTagsIndexPosition[     29408,        701]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -43,9 +43,9 @@ Cell[BoxData[{
  CellChangeTimes->{{3.943890625389629*^9, 3.943890707151291*^9}, {
   3.943890979485574*^9, 3.943891019138839*^9}, {3.94389105813235*^9, 
   3.9438910615650997`*^9}, {3.943891716461607*^9, 3.943891717078252*^9}},
- CellLabel->"In[67]:=",ExpressionUUID->"059011d8-67e6-4bb9-bdb1-65e01fd157e9"],
+ CellLabel->"In[9]:=",ExpressionUUID->"059011d8-67e6-4bb9-bdb1-65e01fd157e9"],
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
   RowBox[{"bisect", " ", "=", " ", 
    RowBox[{"Function", "[", 
@@ -54,69 +54,216 @@ Cell[BoxData[
       RowBox[{
       "f", ",", " ", "intervalStart", ",", " ", "intervalEnd", ",", " ", 
        "iterationsLimit", ",", " ", "minInterval", ",", " ", "precision"}], 
-      "}"}], ",", " ", 
-     RowBox[{"Catch", "[", " ", 
-      RowBox[{
-       RowBox[{"Begin", "[", "\"\<bisect`\>\"", "]"}], ";", " ", "\n", "\t", 
-       RowBox[{"start", " ", "=", " ", "intervalStart"}], ";", "\n", "\t", 
-       RowBox[{"end", " ", "=", " ", "intervalEnd"}], ";", "\n", "\t", 
-       RowBox[{"valueAtStart", " ", "=", " ", 
-        RowBox[{"f", "[", "start", "]"}]}], ";", "\n", "\t", 
-       RowBox[{"valueAtEnd", " ", "=", " ", 
-        RowBox[{"f", "[", "end", "]"}]}], ";", "\n", "\t", 
-       RowBox[{"width", " ", "=", " ", 
-        RowBox[{"end", " ", "-", " ", "start"}]}], ";", "\n", "\t", 
-       RowBox[{"debug", "[", 
+      "}"}], ",", " ", "\n", "\t", 
+     RowBox[{
+      RowBox[{"bounds", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"intervalStart", ",", " ", "intervalEnd"}], "}"}], "}"}]}], 
+      ";", "\n", "\t", 
+      RowBox[{"result", " ", "=", " ", "Null"}], ";", "\n", "\t", 
+      RowBox[{"Begin", "[", "\"\<bisect`\>\"", "]"}], ";", " ", "\n", "\t", 
+      RowBox[{"start", " ", "=", " ", "intervalStart"}], ";", "\n", "\t", 
+      RowBox[{"end", " ", "=", " ", "intervalEnd"}], ";", "\n", "\t", 
+      RowBox[{"valueAtStart", " ", "=", " ", 
+       RowBox[{"f", "[", "start", "]"}]}], ";", "\n", "\t", 
+      RowBox[{"valueAtEnd", " ", "=", " ", 
+       RowBox[{"f", "[", "end", "]"}]}], ";", "\n", "\t", 
+      RowBox[{"width", " ", "=", " ", 
+       RowBox[{"end", " ", "-", " ", "start"}]}], ";", "\n", "\t", 
+      RowBox[{"If", "[", 
+       RowBox[{
         RowBox[{
-         RowBox[{"{", 
-          RowBox[{"\"\<valueAtStart\>\"", ",", " ", "valueAtStart"}], "}"}], 
-         ",", " ", 
-         RowBox[{"{", 
-          RowBox[{"\"\<valueAtEnd\>\"", ",", " ", "valueAtEnd"}], "}"}]}], 
-        "]"}], ";", "\n", "\t", 
+         RowBox[{"Sign", "[", "valueAtStart", "]"}], " ", "!=", " ", 
+         RowBox[{"Sign", "[", "valueAtEnd", "]"}]}], ",", " ", "\n", "\t\t", 
+        RowBox[{
+         RowBox[{"width", " ", "/=", " ", "2"}], ";", "\n", "\t\t", 
+         RowBox[{"mid", " ", "=", " ", 
+          RowBox[{"start", " ", "+", " ", "width"}]}], ";", "\n", "\t\t", 
+         RowBox[{"midValue", " ", "=", " ", 
+          RowBox[{"f", "[", "mid", "]"}]}], ";", "\n", "\t\t", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"i", " ", "=", " ", "0"}], ",", " ", 
+           RowBox[{
+            RowBox[{"i", " ", "<", " ", "iterationsLimit"}], " ", "&&", " ", 
+            RowBox[{
+             RowBox[{"Abs", "[", "width", "]"}], " ", ">=", " ", 
+             "minInterval"}], " ", "&&", " ", 
+            RowBox[{
+             RowBox[{"Abs", "[", "midValue", "]"}], " ", ">=", " ", 
+             "precision"}]}], ",", " ", 
+           RowBox[{"++", "i"}], ",", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{"result", " ", "=", " ", "mid"}], ";", "\n", "\t\t\t", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Sign", "[", "valueAtStart", "]"}], " ", "!=", " ", 
+               RowBox[{"Sign", "[", "midValue", "]"}]}], ",", " ", "\n", 
+              "\t\t\t\t", 
+              RowBox[{
+               RowBox[{"end", " ", "=", " ", "mid"}], ";", "\n", "\t\t\t\t", 
+               RowBox[{"valueAtEnd", " ", "=", " ", "midValue"}], ";"}], "\n",
+               "\t\t\t\t", ",", "\n", "\t\t\t\t", 
+              RowBox[{
+               RowBox[{"start", " ", "=", " ", "mid"}], ";", "\n", "\t\t\t\t", 
+               RowBox[{"valueAtStart", " ", "=", " ", "midValue"}], ";"}]}], 
+             "\n", "\t\t\t", "]"}], ";", "\n", "\t\t\t", 
+            RowBox[{"bounds", " ", "=", " ", 
+             RowBox[{"Join", "[", 
+              RowBox[{"bounds", ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"start", ",", " ", "end"}], "}"}], "}"}]}], "]"}]}], 
+            ";", "\n", "\t\t\t", 
+            RowBox[{"width", " ", "/=", " ", "2"}], ";", "\n", "\t\t\t", 
+            RowBox[{"mid", " ", "=", " ", 
+             RowBox[{"start", " ", "+", " ", "width"}]}], ";", "\n", "\t\t\t", 
+            RowBox[{"midValue", " ", "=", " ", 
+             RowBox[{"f", "[", "mid", "]"}]}], ";"}]}], "\n", "\t\t", "]"}], 
+         ";"}]}], "\n", "\t", "]"}], ";", "\n", "\t", 
+      RowBox[{"End", "[", "]"}], ";", "\n", "\t", 
+      RowBox[{"{", 
+       RowBox[{"result", ",", " ", "bounds"}], "}"}]}]}], "\n", "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"visualize", "[", 
+   RowBox[{"pt_", ",", " ", "bounds_"}], "]"}], " ", ":=", " ", 
+  RowBox[{"Animate", "[", 
+   RowBox[{
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"fun", "[", "x", "]"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"bounds", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "-", "1"}], ",", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"bounds", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "+", "1"}]}], "}"}], ",", " ", "\n",
+       "\t", 
+      RowBox[{"PlotRange", "->", 
+       RowBox[{"Max", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Abs", "[", 
+           RowBox[{"fun", "[", 
+            RowBox[{
+             RowBox[{"bounds", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], ",", " ", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"fun", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"bounds", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "+", "1"}], "]"}], "]"}], ",", 
+          " ", "1"}], "}"}], "]"}]}], ",", "\n", "\t", 
+      RowBox[{"Epilog", "->", " ", 
        RowBox[{"If", "[", 
         RowBox[{
-         RowBox[{
-          RowBox[{"Sign", "[", "valueAtStart", "]"}], " ", "==", " ", 
-          RowBox[{"Sign", "[", "valueAtEnd", "]"}]}], ",", " ", 
-         RowBox[{"Throw", "[", "Null", "]"}]}], "]"}], ";", "\n", "\t", 
-       RowBox[{"result", " ", "=", " ", 
-        RowBox[{"Do", "[", 
-         RowBox[{
-          RowBox[{
-           RowBox[{
-            RowBox[{"\.14", "\n", "\t\t", "width"}], " ", "/=", " ", "2"}], 
-           ";", "\n", "\t\t", 
-           RowBox[{"mid", " ", "=", " ", 
-            RowBox[{"start", " ", "+", " ", "width"}]}], ";", "\n", "\t\t", 
-           RowBox[{"midValue", " ", "=", " ", 
-            RowBox[{"f", "[", "mid", "]"}]}], ";", "\n", "\t\t", 
-           RowBox[{"If", "[", 
-            RowBox[{
+         RowBox[{"i", " ", "==", " ", 
+          RowBox[{"Length", "[", "bounds", "]"}]}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"Red", ",", " ", 
+           RowBox[{"PointSize", "[", "0.02", "]"}], ",", " ", 
+           RowBox[{"Point", "[", 
+            RowBox[{"{", 
+             RowBox[{"pt", ",", " ", "0"}], "}"}], "]"}]}], "}"}], ",", "\n", 
+         "\t\t", 
+         RowBox[{"{", " ", 
+          RowBox[{"Pink", ",", " ", 
+           RowBox[{"PointSize", "[", "0.02", "]"}], ",", " ", 
+           RowBox[{"Point", "[", 
+            RowBox[{"{", 
              RowBox[{
               RowBox[{
-               RowBox[{"Abs", "[", "width", "]"}], " ", "<", " ", 
-               "minInterval"}], " ", "||", " ", 
+               RowBox[{"bounds", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}], ",", " ", "0"}], "}"}], "]"}], 
+           ",", " ", 
+           RowBox[{"Point", "[", 
+            RowBox[{"{", 
+             RowBox[{
               RowBox[{
-               RowBox[{"Abs", "[", "midValue", "]"}], " ", "<", " ", 
-               "precision"}]}], ",", " ", 
-             RowBox[{"Throw", "[", "mid", "]"}]}], "]"}], ";", "\n", "\t\t", 
-           RowBox[{"If", "[", 
-            RowBox[{
+               RowBox[{"bounds", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "[", 
+               RowBox[{"[", "2", "]"}], "]"}], ",", " ", "0"}], "}"}], "]"}], 
+           ",", " ", "\n", "\t\t\t", 
+           RowBox[{"Line", "[", 
+            RowBox[{"{", 
              RowBox[{
-              RowBox[{"Sign", "[", "valueAtStart", "]"}], " ", "!=", " ", 
-              RowBox[{"Sign", "[", "midValue", "]"}]}], ",", " ", "\n", 
-             "\t\t\t", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"bounds", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], ",", " ", "0"}], "}"}], ",", 
+              " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"bounds", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
+                RowBox[{"fun", "[", 
+                 RowBox[{
+                  RowBox[{"bounds", "[", 
+                   RowBox[{"[", "i", "]"}], "]"}], "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "}"}], 
+            "]"}], ",", " ", 
+           RowBox[{"Line", "[", 
+            RowBox[{"{", 
              RowBox[{
-              RowBox[{"end", " ", "=", " ", "mid"}], ";", "\n", "\t\t\t", 
-              RowBox[{"valueAtEnd", " ", "=", " ", "midValue"}], ";"}], "\n", 
-             "\t\t\t", ",", "\n", "\t\t\t", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"bounds", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "2", "]"}], "]"}], ",", " ", "0"}], "}"}], ",", 
+              " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"bounds", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "2", "]"}], "]"}], ",", " ", 
+                RowBox[{"fun", "[", 
+                 RowBox[{
+                  RowBox[{"bounds", "[", 
+                   RowBox[{"[", "i", "]"}], "]"}], "[", 
+                  RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "}"}]}], "}"}], 
+            "]"}], ",", "\n", "\t\t\t", 
+           RowBox[{"Line", "[", 
+            RowBox[{"{", 
              RowBox[{
-              RowBox[{"start", " ", "=", " ", "mid"}], ";", "\n", "\t\t\t", 
-              RowBox[{"valueAtStart", " ", "=", " ", "midValue"}], ";"}]}], 
-            "\n", "\t\t", "]"}]}], "\n", "\t", ",", " ", 
-          RowBox[{"{", "iterationsLimit", "}"}]}], "]"}]}], ";", "\n", 
-       RowBox[{"End", "[", "]"}], ";"}], "]"}]}], "]"}]}], ";"}]], "Code",
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"bounds", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], ",", " ", "0"}], "}"}], ",", 
+              " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"bounds", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "[", 
+                 RowBox[{"[", "2", "]"}], "]"}], ",", " ", "0"}], "}"}]}], 
+             "}"}], "]"}]}], "\n", "}"}]}], "]"}]}]}], "]"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", " ", "1", ",", " ", 
+      RowBox[{"Length", "[", "bounds", "]"}], ",", " ", "1"}], "}"}], ",", 
+    " ", 
+    RowBox[{"AnimationRunning", " ", "->", " ", "False"}]}], "]"}]}]}], "Code",\
+
  CellChangeTimes->{{3.9438887698959007`*^9, 3.94388879264522*^9}, {
    3.943888823635027*^9, 3.943889009878839*^9}, {3.943889041841256*^9, 
    3.9438890510285263`*^9}, {3.94388910344855*^9, 3.943889345971016*^9}, {
@@ -127,26 +274,35 @@ Cell[BoxData[
    3.943890963864382*^9, 3.943890967550596*^9}, {3.943891026174246*^9, 
    3.943891055252275*^9}, {3.943891109519513*^9, 3.943891124166651*^9}, {
    3.94389165534558*^9, 3.943891661638734*^9}, 3.9438917444797907`*^9, {
-   3.943891871593093*^9, 3.943891927923064*^9}, 
-   3.943892173963245*^9},ExpressionUUID->"ae262461-e775-4ffd-ae26-\
-712933c38e8f"],
+   3.943891871593093*^9, 3.943891927923064*^9}, 3.943892173963245*^9, 
+   3.943952079205205*^9, {3.94395270080019*^9, 3.943952894394702*^9}, {
+   3.9439529569107*^9, 3.9439529668552*^9}, {3.943953008439632*^9, 
+   3.943953027299181*^9}, {3.943953202916853*^9, 3.943953230924203*^9}, {
+   3.943953290303225*^9, 3.943953434816272*^9}, {3.943953532735955*^9, 
+   3.943953533923932*^9}, {3.9439535909678907`*^9, 3.9439536307536163`*^9}, {
+   3.943953788171502*^9, 3.943953793806699*^9}, {3.943956249812235*^9, 
+   3.9439562754551992`*^9}},
+ CellLabel->
+  "In[307]:=",ExpressionUUID->"ae262461-e775-4ffd-ae26-712933c38e8f"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[{
- RowBox[{"x", " ", "=", " ", 
-  RowBox[{"bisect", "[", 
-   RowBox[{
-    RowBox[{"Function", "[", 
-     RowBox[{"x", ",", " ", 
-      RowBox[{
-       SuperscriptBox["x", "2"], "-", "9"}]}], "]"}], ",", " ", 
-    RowBox[{"-", "10"}], ",", " ", "2", ",", " ", "300000", ",", " ", 
-    SuperscriptBox["10", 
-     RowBox[{"-", "10000"}]], ",", " ", "0.0001"}], "]"}]}], "\n", 
- RowBox[{"N", "[", 
+ RowBox[{
+  RowBox[{"fun", "[", "x_", "]"}], ":=", 
   RowBox[{
-   SuperscriptBox["x", "2"], "-", "9"}], "]"}]}], "Code",
+   SuperscriptBox["x", "2"], "-", "9"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"pt", ",", " ", "bounds"}], "}"}], " ", "=", " ", 
+   RowBox[{"bisect", "[", 
+    RowBox[{"fun", ",", " ", 
+     RowBox[{"-", "10"}], ",", " ", "2", ",", " ", "100", ",", " ", 
+     SuperscriptBox["10", 
+      RowBox[{"-", "5"}]], ",", " ", "0.01"}], "]"}]}], ";"}], "\n", 
+ RowBox[{"visualize", "[", 
+  RowBox[{"pt", ",", " ", "bounds"}], "]"}]}], "Code",
  CellChangeTimes->{{3.9438901497831078`*^9, 3.9438901771200533`*^9}, {
    3.943890212516083*^9, 3.943890216604528*^9}, {3.9438903631470327`*^9, 
    3.943890363389615*^9}, {3.943890393800371*^9, 3.94389049636509*^9}, {
@@ -154,34 +310,380 @@ Cell[BoxData[{
    3.943890796524828*^9}, {3.943891099773789*^9, 3.9438911001541224`*^9}, {
    3.943891685796753*^9, 3.943891757301835*^9}, 3.943891908613945*^9, {
    3.9438919576394997`*^9, 3.943891961539384*^9}, {3.943892043380615*^9, 
-   3.943892068530702*^9}},
- CellLabel->"In[76]:=",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
+   3.943892068530702*^9}, {3.943952915316243*^9, 3.9439529175222807`*^9}, {
+   3.943953041519178*^9, 3.943953070082749*^9}, {3.943953239659485*^9, 
+   3.9439532430319443`*^9}, {3.9439534768221483`*^9, 3.943953503882346*^9}, {
+   3.943953547852415*^9, 3.943953554465809*^9}, {3.943953769614677*^9, 
+   3.9439539374519987`*^9}, {3.943953987787982*^9, 3.9439540805580597`*^9}, {
+   3.9439541115597687`*^9, 3.9439541376124277`*^9}, {3.943954178824087*^9, 
+   3.943954188685863*^9}, {3.9439542291887913`*^9, 3.9439542460433807`*^9}, {
+   3.9439543685536346`*^9, 3.943954461123451*^9}, {3.9439545456343803`*^9, 
+   3.943954551204419*^9}, {3.943954582670678*^9, 3.943954852769238*^9}, {
+   3.943954912173189*^9, 3.94395497865378*^9}, {3.943955043669939*^9, 
+   3.9439551944171247`*^9}, {3.943955238669242*^9, 3.943955411057201*^9}, {
+   3.943955447659709*^9, 3.943955561213318*^9}, {3.9439556848543367`*^9, 
+   3.943955698611815*^9}, {3.9439558209511833`*^9, 3.943955877918186*^9}, {
+   3.9439559385171957`*^9, 3.9439559465015173`*^9}, {3.943955986081949*^9, 
+   3.943956042827241*^9}, {3.9439561149888287`*^9, 3.943956163809738*^9}, 
+   3.943956247488158*^9, {3.943956281021668*^9, 3.943956289707321*^9}},
+ CellLabel->
+  "In[309]:=",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
 
 Cell[BoxData[
- RowBox[{"-", 
-  FractionBox["196609", "65536"]}]], "Output",
- CellChangeTimes->{{3.943890177676979*^9, 3.943890217021323*^9}, 
-   3.943890271178919*^9, {3.943890303957656*^9, 3.9438903169106627`*^9}, {
-   3.943890363865733*^9, 3.9438904968088284`*^9}, {3.943890571646817*^9, 
-   3.9438905849191427`*^9}, {3.943890718641507*^9, 3.943890740062655*^9}, {
-   3.9438909714425783`*^9, 3.943890984369513*^9}, {3.943891040389687*^9, 
-   3.943891044618335*^9}, {3.943891078361167*^9, 3.943891127790566*^9}, {
-   3.9438916764502687`*^9, 3.9438917577554073`*^9}, {3.943891904221367*^9, 
-   3.943891931377129*^9}, 3.943891961992255*^9, {3.9438920453423433`*^9, 
-   3.943892068968398*^9}},
- CellLabel->"Out[76]=",ExpressionUUID->"4b5cd62f-34a9-49e4-9bab-fd92bd2af6d3"],
-
-Cell[BoxData["0.00009155296720564365`"], "Output",
- CellChangeTimes->{{3.943890177676979*^9, 3.943890217021323*^9}, 
-   3.943890271178919*^9, {3.943890303957656*^9, 3.9438903169106627`*^9}, {
-   3.943890363865733*^9, 3.9438904968088284`*^9}, {3.943890571646817*^9, 
-   3.9438905849191427`*^9}, {3.943890718641507*^9, 3.943890740062655*^9}, {
-   3.9438909714425783`*^9, 3.943890984369513*^9}, {3.943891040389687*^9, 
-   3.943891044618335*^9}, {3.943891078361167*^9, 3.943891127790566*^9}, {
-   3.9438916764502687`*^9, 3.9438917577554073`*^9}, {3.943891904221367*^9, 
-   3.943891931377129*^9}, 3.943891961992255*^9, {3.9438920453423433`*^9, 
-   3.9438920689691477`*^9}},
- CellLabel->"Out[77]=",ExpressionUUID->"b8ea2caf-f440-4bbd-b625-25103df6cda3"]
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{bisect`i$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[bisect`i$$], 1, 12, 1, ControlType -> Animator}}, 
+    Typeset`size$$ = {360., {108.81558398623119`, 114.44058398623119`}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {bisect`i$$ = 1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> Plot[
+        bisect`fun[$CellContext`x], {$CellContext`x, Part[
+           Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+              Rational[-5, 2]}, {
+              Rational[-13, 4], 
+              Rational[-5, 2]}, {
+              Rational[-13, 4], 
+              Rational[-23, 8]}, {
+              Rational[-49, 16], 
+              Rational[-23, 8]}, {
+              Rational[-49, 16], 
+              Rational[-95, 32]}, {
+              Rational[-193, 64], 
+              Rational[-95, 32]}, {
+              Rational[-193, 64], 
+              Rational[-383, 128]}, {
+              Rational[-769, 256], 
+              Rational[-383, 128]}, {
+              Rational[-769, 256], 
+              Rational[-1535, 512]}}, 1], 1] - 1, Part[
+           Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+              Rational[-5, 2]}, {
+              Rational[-13, 4], 
+              Rational[-5, 2]}, {
+              Rational[-13, 4], 
+              Rational[-23, 8]}, {
+              Rational[-49, 16], 
+              Rational[-23, 8]}, {
+              Rational[-49, 16], 
+              Rational[-95, 32]}, {
+              Rational[-193, 64], 
+              Rational[-95, 32]}, {
+              Rational[-193, 64], 
+              Rational[-383, 128]}, {
+              Rational[-769, 256], 
+              Rational[-383, 128]}, {
+              Rational[-769, 256], 
+              Rational[-1535, 512]}}, 1], 2] + 1}, PlotRange -> Max[{
+           Abs[
+            bisect`fun[
+             Part[
+              Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                 Rational[-5, 2]}, {
+                 Rational[-13, 4], 
+                 Rational[-5, 2]}, {
+                 Rational[-13, 4], 
+                 Rational[-23, 8]}, {
+                 Rational[-49, 16], 
+                 Rational[-23, 8]}, {
+                 Rational[-49, 16], 
+                 Rational[-95, 32]}, {
+                 Rational[-193, 64], 
+                 Rational[-95, 32]}, {
+                 Rational[-193, 64], 
+                 Rational[-383, 128]}, {
+                 Rational[-769, 256], 
+                 Rational[-383, 128]}, {
+                 Rational[-769, 256], 
+                 Rational[-1535, 512]}}, 1], 1]]], 
+           Abs[
+            bisect`fun[Part[
+               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-1535, 512]}}, 1], 2] + 1]], 1}], Epilog -> 
+        If[bisect`i$$ == Length[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+              Rational[-5, 2]}, {
+              Rational[-13, 4], 
+              Rational[-5, 2]}, {
+              Rational[-13, 4], 
+              Rational[-23, 8]}, {
+              Rational[-49, 16], 
+              Rational[-23, 8]}, {
+              Rational[-49, 16], 
+              Rational[-95, 32]}, {
+              Rational[-193, 64], 
+              Rational[-95, 32]}, {
+              Rational[-193, 64], 
+              Rational[-383, 128]}, {
+              Rational[-769, 256], 
+              Rational[-383, 128]}, {
+              Rational[-769, 256], 
+              Rational[-1535, 512]}}], {Red, 
+           PointSize[0.02], 
+           Point[{
+             Rational[-1535, 512], 0}]}, {Pink, 
+           PointSize[0.02], 
+           Point[{
+             Part[
+              Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                 Rational[-5, 2]}, {
+                 Rational[-13, 4], 
+                 Rational[-5, 2]}, {
+                 Rational[-13, 4], 
+                 Rational[-23, 8]}, {
+                 Rational[-49, 16], 
+                 Rational[-23, 8]}, {
+                 Rational[-49, 16], 
+                 Rational[-95, 32]}, {
+                 Rational[-193, 64], 
+                 Rational[-95, 32]}, {
+                 Rational[-193, 64], 
+                 Rational[-383, 128]}, {
+                 Rational[-769, 256], 
+                 Rational[-383, 128]}, {
+                 Rational[-769, 256], 
+                 Rational[-1535, 512]}}, bisect`i$$], 1], 0}], 
+           Point[{
+             Part[
+              Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                 Rational[-5, 2]}, {
+                 Rational[-13, 4], 
+                 Rational[-5, 2]}, {
+                 Rational[-13, 4], 
+                 Rational[-23, 8]}, {
+                 Rational[-49, 16], 
+                 Rational[-23, 8]}, {
+                 Rational[-49, 16], 
+                 Rational[-95, 32]}, {
+                 Rational[-193, 64], 
+                 Rational[-95, 32]}, {
+                 Rational[-193, 64], 
+                 Rational[-383, 128]}, {
+                 Rational[-769, 256], 
+                 Rational[-383, 128]}, {
+                 Rational[-769, 256], 
+                 Rational[-1535, 512]}}, bisect`i$$], 2], 0}], 
+           Line[{{
+              Part[
+               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-1535, 512]}}, bisect`i$$], 1], 0}, {
+              Part[
+               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-1535, 512]}}, bisect`i$$], 1], 
+              bisect`fun[
+               Part[
+                Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                   Rational[-5, 2]}, {
+                   Rational[-13, 4], 
+                   Rational[-5, 2]}, {
+                   Rational[-13, 4], 
+                   Rational[-23, 8]}, {
+                   Rational[-49, 16], 
+                   Rational[-23, 8]}, {
+                   Rational[-49, 16], 
+                   Rational[-95, 32]}, {
+                   Rational[-193, 64], 
+                   Rational[-95, 32]}, {
+                   Rational[-193, 64], 
+                   Rational[-383, 128]}, {
+                   Rational[-769, 256], 
+                   Rational[-383, 128]}, {
+                   Rational[-769, 256], 
+                   Rational[-1535, 512]}}, bisect`i$$], 1]]}}], 
+           Line[{{
+              Part[
+               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-1535, 512]}}, bisect`i$$], 2], 0}, {
+              Part[
+               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-1535, 512]}}, bisect`i$$], 2], 
+              bisect`fun[
+               Part[
+                Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                   Rational[-5, 2]}, {
+                   Rational[-13, 4], 
+                   Rational[-5, 2]}, {
+                   Rational[-13, 4], 
+                   Rational[-23, 8]}, {
+                   Rational[-49, 16], 
+                   Rational[-23, 8]}, {
+                   Rational[-49, 16], 
+                   Rational[-95, 32]}, {
+                   Rational[-193, 64], 
+                   Rational[-95, 32]}, {
+                   Rational[-193, 64], 
+                   Rational[-383, 128]}, {
+                   Rational[-769, 256], 
+                   Rational[-383, 128]}, {
+                   Rational[-769, 256], 
+                   Rational[-1535, 512]}}, bisect`i$$], 2]]}}], 
+           Line[{{
+              Part[
+               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-1535, 512]}}, bisect`i$$], 1], 0}, {
+              Part[
+               Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-5, 2]}, {
+                  Rational[-13, 4], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-23, 8]}, {
+                  Rational[-49, 16], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-95, 32]}, {
+                  Rational[-193, 64], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-383, 128]}, {
+                  Rational[-769, 256], 
+                  Rational[-1535, 512]}}, bisect`i$$], 2], 0}}]}]], 
+      "Specifications" :> {{
+        bisect`i$$, 1, 12, 1, AnimationRunning -> False, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405.1, {143.3155839862312, 148.9405839862312}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.9439538402031317`*^9, {3.943953910395268*^9, 3.9439539383541193`*^9}, 
+   3.9439539944528913`*^9, {3.943954025379867*^9, 3.9439540813921757`*^9}, {
+   3.9439541151123877`*^9, 3.943954139077807*^9}, {3.94395417993279*^9, 
+   3.943954189451858*^9}, {3.943954234416401*^9, 3.943954246586254*^9}, {
+   3.943954443044178*^9, 3.943954461761304*^9}, 3.9439545517254753`*^9, {
+   3.9439545896325274`*^9, 3.943954608946814*^9}, {3.943954641089622*^9, 
+   3.943954690387506*^9}, 3.94395472417592*^9, 3.943954776901528*^9, 
+   3.9439548139160957`*^9, {3.943954850606986*^9, 3.943954853296179*^9}, {
+   3.943954954398903*^9, 3.943954992916914*^9}, {3.943955058474835*^9, 
+   3.94395506743099*^9}, {3.9439551119732027`*^9, 3.943955145295113*^9}, 
+   3.943955195242281*^9, {3.943955309037373*^9, 3.943955415324073*^9}, 
+   3.9439554862754383`*^9, 3.943955562392414*^9, 3.943955699840622*^9, {
+   3.943955844249461*^9, 3.943955878781755*^9}, 3.943955947444509*^9, 
+   3.943955995736084*^9, {3.943956026254496*^9, 3.9439560443401203`*^9}, {
+   3.943956117506813*^9, 3.943956165761722*^9}, 3.943956290663455*^9},
+ CellLabel->
+  "Out[311]=",ExpressionUUID->"d06ce237-757e-4b63-8d5d-ff29bb24aee5"]
 }, Open  ]]
 },
 WindowSize->{1435.5, 761.25},
@@ -201,12 +703,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 989, 25, 92, "Code",ExpressionUUID->"059011d8-67e6-4bb9-bdb1-65e01fd157e9"],
-Cell[1546, 47, 4081, 84, 466, "Code",ExpressionUUID->"ae262461-e775-4ffd-ae26-712933c38e8f"],
+Cell[554, 20, 988, 25, 92, "Code",ExpressionUUID->"059011d8-67e6-4bb9-bdb1-65e01fd157e9"],
+Cell[1545, 47, 10359, 238, 787, "Code",ExpressionUUID->"ae262461-e775-4ffd-ae26-712933c38e8f"],
 Cell[CellGroupData[{
-Cell[5652, 135, 1095, 22, 73, "Code",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
-Cell[6750, 159, 770, 12, 45, "Output",ExpressionUUID->"4b5cd62f-34a9-49e4-9bab-fd92bd2af6d3"],
-Cell[7523, 173, 747, 10, 33, "Output",ExpressionUUID->"b8ea2caf-f440-4bbd-b625-25103df6cda3"]
+Cell[11929, 289, 2331, 40, 92, "Code",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
+Cell[14263, 331, 14767, 354, 309, "Output",ExpressionUUID->"d06ce237-757e-4b63-8d5d-ff29bb24aee5"]
 }, Open  ]]
 }
 ]
