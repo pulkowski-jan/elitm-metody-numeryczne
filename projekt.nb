@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     26882,        624]
-NotebookOptionsPosition[     26104,        604]
-NotebookOutlinePosition[     26509,        620]
-CellTagsIndexPosition[     26466,        617]
+NotebookDataLength[     28333,        656]
+NotebookOptionsPosition[     27463,        635]
+NotebookOutlinePosition[     27868,        651]
+CellTagsIndexPosition[     27825,        648]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -91,7 +91,7 @@ Cell[BoxData[
       RowBox[{"Epilog", "->", " ", 
        RowBox[{"If", "[", 
         RowBox[{
-         RowBox[{"i", " ", "==", " ", 
+         RowBox[{"i", " ", ">=", " ", 
           RowBox[{"Length", "[", "bounds", "]"}]}], ",", " ", 
          RowBox[{"{", 
           RowBox[{
@@ -162,14 +162,16 @@ Cell[BoxData[
      "]"}], ",", " ", 
     RowBox[{"{", 
      RowBox[{"i", ",", " ", "1", ",", " ", 
-      RowBox[{"Length", "[", "bounds", "]"}], ",", " ", "1"}], "}"}], ",", 
-    " ", 
+      RowBox[{
+       RowBox[{"Length", "[", "bounds", "]"}], "+", "2"}], ",", " ", "1"}], 
+     "}"}], ",", " ", 
     RowBox[{"AnimationRunning", " ", "->", " ", "False"}], ",", " ", 
     RowBox[{"AnimationRepetitions", " ", "->", " ", "2"}]}], "]"}]}]], "Code",\
 
- CellChangeTimes->{3.9439591080131197`*^9},
+ CellChangeTimes->{
+  3.9439591080131197`*^9, {3.9439594354296618`*^9, 3.943959441989355*^9}},
  CellLabel->
-  "In[493]:=",ExpressionUUID->"f23f8236-82bd-4721-b04d-9e92b1038475"],
+  "In[525]:=",ExpressionUUID->"f23f8236-82bd-4721-b04d-9e92b1038475"],
 
 Cell[BoxData[
  RowBox[{
@@ -283,7 +285,10 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"fn", "[", "x_", "]"}], ":=", 
   RowBox[{
-   SuperscriptBox["x", "2"], "-", "9"}]}], "\n", 
+   SuperscriptBox["x", "2"], "-", 
+   RowBox[{"4", "x", "*", 
+    RowBox[{"Sin", "[", "x", "]"}]}], "-", 
+   SuperscriptBox["Pi", "x"], "-", "5"}]}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"{", 
@@ -318,19 +323,21 @@ Cell[BoxData[{
    3.9439559385171957`*^9, 3.9439559465015173`*^9}, {3.943955986081949*^9, 
    3.943956042827241*^9}, {3.9439561149888287`*^9, 3.943956163809738*^9}, 
    3.943956247488158*^9, {3.943956281021668*^9, 3.943956289707321*^9}, {
-   3.943957019492955*^9, 3.943957046635229*^9}},
+   3.943957019492955*^9, 3.943957046635229*^9}, {3.9439592384929333`*^9, 
+   3.9439592726418667`*^9}, {3.943959308903*^9, 3.943959324703862*^9}, {
+   3.9439593992984037`*^9, 3.94395940782876*^9}},
  CellLabel->
-  "In[495]:=",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
+  "In[526]:=",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{bisect`i$$ = 1, Typeset`show$$ = True, 
+   DynamicModuleBox[{bisect`i$$ = 15, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
-      Hold[bisect`i$$], 1, 12, 1, ControlType -> Animator}}, 
-    Typeset`size$$ = {360., {108.81558398623116`, 114.44058398623116`}}, 
+      Hold[bisect`i$$], 1, 15, 1, ControlType -> Animator}}, 
+    Typeset`size$$ = {360., {108.81558398623118`, 114.44058398623118`}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
     Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -347,38 +354,42 @@ Cell[BoxData[
               Rational[-5, 2]}, {
               Rational[-13, 4], 
               Rational[-5, 2]}, {
-              Rational[-13, 4], 
-              Rational[-23, 8]}, {
-              Rational[-49, 16], 
-              Rational[-23, 8]}, {
-              Rational[-49, 16], 
-              Rational[-95, 32]}, {
-              Rational[-193, 64], 
-              Rational[-95, 32]}, {
-              Rational[-193, 64], 
-              Rational[-383, 128]}, {
-              Rational[-769, 256], 
-              Rational[-383, 128]}, {
-              Rational[-769, 256], 
-              Rational[-1535, 512]}}, 1], 1] - 1, Part[
+              Rational[-23, 8], 
+              Rational[-5, 2]}, {
+              Rational[-23, 8], 
+              Rational[-43, 16]}, {
+              Rational[-23, 8], 
+              Rational[-89, 32]}, {
+              Rational[-23, 8], 
+              Rational[-181, 64]}, {
+              Rational[-23, 8], 
+              Rational[-365, 128]}, {
+              Rational[-733, 256], 
+              Rational[-365, 128]}, {
+              Rational[-733, 256], 
+              Rational[-1463, 512]}, {
+              Rational[-733, 256], 
+              Rational[-2929, 1024]}}, 1], 1] - 1, Part[
            Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
               Rational[-5, 2]}, {
               Rational[-13, 4], 
               Rational[-5, 2]}, {
-              Rational[-13, 4], 
-              Rational[-23, 8]}, {
-              Rational[-49, 16], 
-              Rational[-23, 8]}, {
-              Rational[-49, 16], 
-              Rational[-95, 32]}, {
-              Rational[-193, 64], 
-              Rational[-95, 32]}, {
-              Rational[-193, 64], 
-              Rational[-383, 128]}, {
-              Rational[-769, 256], 
-              Rational[-383, 128]}, {
-              Rational[-769, 256], 
-              Rational[-1535, 512]}}, 1], 2] + 1}, PlotRange -> Max[{
+              Rational[-23, 8], 
+              Rational[-5, 2]}, {
+              Rational[-23, 8], 
+              Rational[-43, 16]}, {
+              Rational[-23, 8], 
+              Rational[-89, 32]}, {
+              Rational[-23, 8], 
+              Rational[-181, 64]}, {
+              Rational[-23, 8], 
+              Rational[-365, 128]}, {
+              Rational[-733, 256], 
+              Rational[-365, 128]}, {
+              Rational[-733, 256], 
+              Rational[-1463, 512]}, {
+              Rational[-733, 256], 
+              Rational[-2929, 1024]}}, 1], 2] + 1}, PlotRange -> Max[{
             Abs[
              bisect`fn[
               Part[
@@ -386,70 +397,76 @@ Cell[BoxData[
                   Rational[-5, 2]}, {
                   Rational[-13, 4], 
                   Rational[-5, 2]}, {
-                  Rational[-13, 4], 
-                  Rational[-23, 8]}, {
-                  Rational[-49, 16], 
-                  Rational[-23, 8]}, {
-                  Rational[-49, 16], 
-                  Rational[-95, 32]}, {
-                  Rational[-193, 64], 
-                  Rational[-95, 32]}, {
-                  Rational[-193, 64], 
-                  Rational[-383, 128]}, {
-                  Rational[-769, 256], 
-                  Rational[-383, 128]}, {
-                  Rational[-769, 256], 
-                  Rational[-1535, 512]}}, 1], 1]]], 
+                  Rational[-23, 8], 
+                  Rational[-5, 2]}, {
+                  Rational[-23, 8], 
+                  Rational[-43, 16]}, {
+                  Rational[-23, 8], 
+                  Rational[-89, 32]}, {
+                  Rational[-23, 8], 
+                  Rational[-181, 64]}, {
+                  Rational[-23, 8], 
+                  Rational[-365, 128]}, {
+                  Rational[-733, 256], 
+                  Rational[-365, 128]}, {
+                  Rational[-733, 256], 
+                  Rational[-1463, 512]}, {
+                  Rational[-733, 256], 
+                  Rational[-2929, 1024]}}, 1], 1]]], 
             Abs[
              bisect`fn[Part[
                 Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
                    Rational[-5, 2]}, {
                    Rational[-13, 4], 
                    Rational[-5, 2]}, {
-                   Rational[-13, 4], 
-                   Rational[-23, 8]}, {
-                   Rational[-49, 16], 
-                   Rational[-23, 8]}, {
-                   Rational[-49, 16], 
-                   Rational[-95, 32]}, {
-                   Rational[-193, 64], 
-                   Rational[-95, 32]}, {
-                   Rational[-193, 64], 
-                   Rational[-383, 128]}, {
-                   Rational[-769, 256], 
-                   Rational[-383, 128]}, {
-                   Rational[-769, 256], 
-                   Rational[-1535, 512]}}, 1], 2] + 1]]}] + 1, Epilog -> 
-        If[bisect`i$$ == Length[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
+                   Rational[-23, 8], 
+                   Rational[-5, 2]}, {
+                   Rational[-23, 8], 
+                   Rational[-43, 16]}, {
+                   Rational[-23, 8], 
+                   Rational[-89, 32]}, {
+                   Rational[-23, 8], 
+                   Rational[-181, 64]}, {
+                   Rational[-23, 8], 
+                   Rational[-365, 128]}, {
+                   Rational[-733, 256], 
+                   Rational[-365, 128]}, {
+                   Rational[-733, 256], 
+                   Rational[-1463, 512]}, {
+                   Rational[-733, 256], 
+                   Rational[-2929, 1024]}}, 1], 2] + 1]]}] + 1, Epilog -> 
+        If[bisect`i$$ >= Length[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
               Rational[-5, 2]}, {
               Rational[-13, 4], 
               Rational[-5, 2]}, {
-              Rational[-13, 4], 
-              Rational[-23, 8]}, {
-              Rational[-49, 16], 
-              Rational[-23, 8]}, {
-              Rational[-49, 16], 
-              Rational[-95, 32]}, {
-              Rational[-193, 64], 
-              Rational[-95, 32]}, {
-              Rational[-193, 64], 
-              Rational[-383, 128]}, {
-              Rational[-769, 256], 
-              Rational[-383, 128]}, {
-              Rational[-769, 256], 
-              Rational[-1535, 512]}}], {
+              Rational[-23, 8], 
+              Rational[-5, 2]}, {
+              Rational[-23, 8], 
+              Rational[-43, 16]}, {
+              Rational[-23, 8], 
+              Rational[-89, 32]}, {
+              Rational[-23, 8], 
+              Rational[-181, 64]}, {
+              Rational[-23, 8], 
+              Rational[-365, 128]}, {
+              Rational[-733, 256], 
+              Rational[-365, 128]}, {
+              Rational[-733, 256], 
+              Rational[-1463, 512]}, {
+              Rational[-733, 256], 
+              Rational[-2929, 1024]}}], {
            PointSize[Large], 
            Point[{
-             Rational[-1535, 512], 0}], 
+             Rational[-2929, 1024], 0}], 
            Style[
             Text[
              ToString[{
                N[
-                Rational[-1535, 512]], 
+                Rational[-2929, 1024]], 
                N[
                 bisect`fn[
-                 Rational[-1535, 512]]]}], {
-              Rational[-1535, 512], 0}, {-1, -2}], Bold]}, 
+                 Rational[-2929, 1024]]]}], {
+              Rational[-2929, 1024], 0}, {-1, -2}], Bold]}, 
           Join[{Pink, 
             PointSize[0.02], 
             Point[{
@@ -458,102 +475,112 @@ Cell[BoxData[
                   Rational[-5, 2]}, {
                   Rational[-13, 4], 
                   Rational[-5, 2]}, {
-                  Rational[-13, 4], 
-                  Rational[-23, 8]}, {
-                  Rational[-49, 16], 
-                  Rational[-23, 8]}, {
-                  Rational[-49, 16], 
-                  Rational[-95, 32]}, {
-                  Rational[-193, 64], 
-                  Rational[-95, 32]}, {
-                  Rational[-193, 64], 
-                  Rational[-383, 128]}, {
-                  Rational[-769, 256], 
-                  Rational[-383, 128]}, {
-                  Rational[-769, 256], 
-                  Rational[-1535, 512]}}, bisect`i$$], 1], 
+                  Rational[-23, 8], 
+                  Rational[-5, 2]}, {
+                  Rational[-23, 8], 
+                  Rational[-43, 16]}, {
+                  Rational[-23, 8], 
+                  Rational[-89, 32]}, {
+                  Rational[-23, 8], 
+                  Rational[-181, 64]}, {
+                  Rational[-23, 8], 
+                  Rational[-365, 128]}, {
+                  Rational[-733, 256], 
+                  Rational[-365, 128]}, {
+                  Rational[-733, 256], 
+                  Rational[-1463, 512]}, {
+                  Rational[-733, 256], 
+                  Rational[-2929, 1024]}}, bisect`i$$], 1], 
               bisect`fn[
                Part[
                 Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
                    Rational[-5, 2]}, {
                    Rational[-13, 4], 
                    Rational[-5, 2]}, {
-                   Rational[-13, 4], 
-                   Rational[-23, 8]}, {
-                   Rational[-49, 16], 
-                   Rational[-23, 8]}, {
-                   Rational[-49, 16], 
-                   Rational[-95, 32]}, {
-                   Rational[-193, 64], 
-                   Rational[-95, 32]}, {
-                   Rational[-193, 64], 
-                   Rational[-383, 128]}, {
-                   Rational[-769, 256], 
-                   Rational[-383, 128]}, {
-                   Rational[-769, 256], 
-                   Rational[-1535, 512]}}, bisect`i$$], 1]]}], 
+                   Rational[-23, 8], 
+                   Rational[-5, 2]}, {
+                   Rational[-23, 8], 
+                   Rational[-43, 16]}, {
+                   Rational[-23, 8], 
+                   Rational[-89, 32]}, {
+                   Rational[-23, 8], 
+                   Rational[-181, 64]}, {
+                   Rational[-23, 8], 
+                   Rational[-365, 128]}, {
+                   Rational[-733, 256], 
+                   Rational[-365, 128]}, {
+                   Rational[-733, 256], 
+                   Rational[-1463, 512]}, {
+                   Rational[-733, 256], 
+                   Rational[-2929, 1024]}}, bisect`i$$], 1]]}], 
             Point[{
               Part[
                Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
                   Rational[-5, 2]}, {
                   Rational[-13, 4], 
                   Rational[-5, 2]}, {
-                  Rational[-13, 4], 
-                  Rational[-23, 8]}, {
-                  Rational[-49, 16], 
-                  Rational[-23, 8]}, {
-                  Rational[-49, 16], 
-                  Rational[-95, 32]}, {
-                  Rational[-193, 64], 
-                  Rational[-95, 32]}, {
-                  Rational[-193, 64], 
-                  Rational[-383, 128]}, {
-                  Rational[-769, 256], 
-                  Rational[-383, 128]}, {
-                  Rational[-769, 256], 
-                  Rational[-1535, 512]}}, bisect`i$$], 2], 
+                  Rational[-23, 8], 
+                  Rational[-5, 2]}, {
+                  Rational[-23, 8], 
+                  Rational[-43, 16]}, {
+                  Rational[-23, 8], 
+                  Rational[-89, 32]}, {
+                  Rational[-23, 8], 
+                  Rational[-181, 64]}, {
+                  Rational[-23, 8], 
+                  Rational[-365, 128]}, {
+                  Rational[-733, 256], 
+                  Rational[-365, 128]}, {
+                  Rational[-733, 256], 
+                  Rational[-1463, 512]}, {
+                  Rational[-733, 256], 
+                  Rational[-2929, 1024]}}, bisect`i$$], 2], 
               bisect`fn[
                Part[
                 Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
                    Rational[-5, 2]}, {
                    Rational[-13, 4], 
                    Rational[-5, 2]}, {
-                   Rational[-13, 4], 
-                   Rational[-23, 8]}, {
-                   Rational[-49, 16], 
-                   Rational[-23, 8]}, {
-                   Rational[-49, 16], 
-                   Rational[-95, 32]}, {
-                   Rational[-193, 64], 
-                   Rational[-95, 32]}, {
-                   Rational[-193, 64], 
-                   Rational[-383, 128]}, {
-                   Rational[-769, 256], 
-                   Rational[-383, 128]}, {
-                   Rational[-769, 256], 
-                   Rational[-1535, 512]}}, bisect`i$$], 2]]}]}, 
+                   Rational[-23, 8], 
+                   Rational[-5, 2]}, {
+                   Rational[-23, 8], 
+                   Rational[-43, 16]}, {
+                   Rational[-23, 8], 
+                   Rational[-89, 32]}, {
+                   Rational[-23, 8], 
+                   Rational[-181, 64]}, {
+                   Rational[-23, 8], 
+                   Rational[-365, 128]}, {
+                   Rational[-733, 256], 
+                   Rational[-365, 128]}, {
+                   Rational[-733, 256], 
+                   Rational[-1463, 512]}, {
+                   Rational[-733, 256], 
+                   Rational[-2929, 1024]}}, bisect`i$$], 2]]}]}, 
            Map[InfiniteLine[{#, 
               bisect`fn[#]}, {0, 1}]& , 
             Part[{{-10, 2}, {-4, 2}, {-4, -1}, {-4, 
                Rational[-5, 2]}, {
                Rational[-13, 4], 
                Rational[-5, 2]}, {
-               Rational[-13, 4], 
-               Rational[-23, 8]}, {
-               Rational[-49, 16], 
-               Rational[-23, 8]}, {
-               Rational[-49, 16], 
-               Rational[-95, 32]}, {
-               Rational[-193, 64], 
-               Rational[-95, 32]}, {
-               Rational[-193, 64], 
-               Rational[-383, 128]}, {
-               Rational[-769, 256], 
-               Rational[-383, 128]}, {
-               Rational[-769, 256], 
-               Rational[-1535, 512]}}, bisect`i$$]]]]], 
+               Rational[-23, 8], 
+               Rational[-5, 2]}, {
+               Rational[-23, 8], 
+               Rational[-43, 16]}, {
+               Rational[-23, 8], 
+               Rational[-89, 32]}, {
+               Rational[-23, 8], 
+               Rational[-181, 64]}, {
+               Rational[-23, 8], 
+               Rational[-365, 128]}, {
+               Rational[-733, 256], 
+               Rational[-365, 128]}, {
+               Rational[-733, 256], 
+               Rational[-1463, 512]}, {
+               Rational[-733, 256], 
+               Rational[-2929, 1024]}}, bisect`i$$]]]]], 
       "Specifications" :> {{
-        bisect`i$$, 1, 12, 1, AnimationRunning -> False, AnimationRepetitions -> 
+        bisect`i$$, 1, 15, 1, AnimationRunning -> False, AnimationRepetitions -> 
          2, AppearanceElements -> {
           "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
            "DirectionButton"}}}, 
@@ -597,10 +624,14 @@ Cell[BoxData[
    3.943957572834774*^9}, {3.943957777298522*^9, 3.943957791283718*^9}, {
    3.9439578233456993`*^9, 3.94395786961052*^9}, 3.94395792343475*^9, 
    3.94395889079202*^9, {3.9439589966309032`*^9, 3.943959028770595*^9}, 
-   3.9439591139409933`*^9},
+   3.9439591139409933`*^9, {3.943959258274095*^9, 3.943959273280189*^9}, {
+   3.943959314553814*^9, 3.943959349022561*^9}, {3.9439594018793583`*^9, 
+   3.943959408947772*^9}, 3.943959445698399*^9},
  CellLabel->
-  "Out[497]=",ExpressionUUID->"4ce85d63-fa36-4791-a8ca-7a52cb2c077e"]
-}, Open  ]]
+  "Out[528]=",ExpressionUUID->"9062a160-fee4-4cda-853f-ac7c772889bb"]
+}, Open  ]],
+
+Cell[BoxData[""], "Code",ExpressionUUID->"23c6f50a-f086-4d9b-8708-d8c121bcffec"]
 },
 WindowSize->{1435.5, 761.25},
 WindowMargins->{{-1442.25, Automatic}, {Automatic, -22.5}},
@@ -620,12 +651,13 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[554, 20, 993, 26, 92, "Code",ExpressionUUID->"059011d8-67e6-4bb9-bdb1-65e01fd157e9"],
-Cell[1550, 48, 4740, 123, 157, "Code",ExpressionUUID->"f23f8236-82bd-4721-b04d-9e92b1038475"],
-Cell[6293, 173, 5438, 104, 640, "Code",ExpressionUUID->"ae262461-e775-4ffd-ae26-712933c38e8f"],
+Cell[1550, 48, 4820, 125, 157, "Code",ExpressionUUID->"f23f8236-82bd-4721-b04d-9e92b1038475"],
+Cell[6373, 175, 5438, 104, 640, "Code",ExpressionUUID->"ae262461-e775-4ffd-ae26-712933c38e8f"],
 Cell[CellGroupData[{
-Cell[11756, 281, 2395, 41, 92, "Code",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
-Cell[14154, 324, 11934, 277, 309, "Output",ExpressionUUID->"4ce85d63-fa36-4791-a8ca-7a52cb2c077e"]
-}, Open  ]]
+Cell[11836, 283, 2650, 46, 92, "Code",ExpressionUUID->"0f4e1c7c-e747-4fe2-98a2-c7d1ac248826"],
+Cell[14489, 331, 12875, 299, 309, "Output",ExpressionUUID->"9062a160-fee4-4cda-853f-ac7c772889bb"]
+}, Open  ]],
+Cell[27379, 633, 80, 0, 51, "Code",ExpressionUUID->"23c6f50a-f086-4d9b-8708-d8c121bcffec"]
 }
 ]
 *)
